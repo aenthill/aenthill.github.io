@@ -1,0 +1,6 @@
+tasks:
+
+  - use: gen
+    short: Generates HTML sources
+    run:
+      - static-docs --in docs --out . --title Aenthill --subtitle "May the swarm be with you"
