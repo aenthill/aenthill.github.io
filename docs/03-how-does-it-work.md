@@ -6,7 +6,7 @@ As explained before, an ecosystem of *Aents* is working by sending events to eac
 
 An event may be sent by [Aenthill](https://github.com/aenthill/aenthill) directly or by another *Aent*.
 
-Let start with [Aenthill](https://github.com/aenthill/aenthill):
+Let's start with [Aenthill](https://github.com/aenthill/aenthill):
 
 ```bash
 $ aenthill add aenthill/cassandra
