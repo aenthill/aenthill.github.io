@@ -60,3 +60,19 @@ Those environment variables allows the *Aent* to understand within which context
   <p>The log level as defined by the user with [Aenthill](https://github.com/aenthill/aenthill).</p>
 </details>
 
+As you undestand, an *Aent* is a Docker image which has a binary called <code>aent</code>. This binary should accept two arguments:
+
+* The event name (a string)
+* The payload (a string too) which contains the data associated to the event
+
+The last argument have to be optional (for instance, it is never filled by [Aenthill](https://github.com/aenthill/aenthill).
+
+You may now wondering how an *Aent* is able to communicate with another *Aents*.
+
+Actually, it works the same as [Aenthill](https://github.com/aenthill/aenthill): use the Docker client binary with almost the same options.
+Just don't forget to:
+
+* Set <code>PHEROMONE_FROM</code> with your *Aent* image name
+* Set <code>PHEROMONE_WHOAMI</code> witht the recipient image name
+
+Too much complicated? Don't worry, we provide [Hermes](https://github.com/aenthill/hermes), a tool for sending events inside a Docker container.
