@@ -69,6 +69,8 @@ This binary should accept two arguments:
 
 The last argument has to be optional (for instance, it is never filled by [Aenthill](https://github.com/aenthill/aenthill)).
 
+**The entire process will stop if the binary <code>aent</code> returns an exit code different than 0.**
+
 You may now wondering how an *Aent* is able to communicate with another *Aent*.
 
 Actually, it works the same as [Aenthill](https://github.com/aenthill/aenthill): use the Docker client binary with almost the same options.
@@ -76,7 +78,5 @@ Just don't forget to:
 
 * Set <code>PHEROMONE_FROM</code> with your *Aent* image name
 * Set <code>PHEROMONE_WHOAMI</code> with the recipient image name
-
-**Important:** The entire process will stop if the binary <code>aent</code> returns an exit code != 0.
 
 Too much complicated? Don't worry, we provide [Hermes](https://github.com/aenthill/hermes), a tool for sending events inside a Docker container.
