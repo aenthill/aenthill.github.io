@@ -150,7 +150,7 @@ $ scoop install aenthill
 -e <span class="s2">&#34;PHEROMONE_HOST_PROJECT_DIR=/host/project/dir&#34;</span>
 -e <span class="s2">&#34;PHEROMONE_CONTAINER_PROJECT_DIR=/aenthill&#34;</span>
 -e <span class="s2">&#34;PHEROMONE_LOG_LEVEL=INFO&#34;</span>
-aenthill/cassandra aent ADD
+aenthill/cassandra aent <span class="s2">&#34;ADD&#34;</span>
 </pre>
 
 <p>There are several things to note:</p>
@@ -209,6 +209,8 @@ Just don’t forget to:</p>
 <li>Set <code>PHEROMONE_FROM</code> with your <em>Aent</em> image name</li>
 <li>Set <code>PHEROMONE_WHOAMI</code> with the recipient image name</li>
 </ul>
+
+<p><strong>Important:</strong> The entire process will stop if the binary <code>aent</code> returns an exit code != 0.</p>
 
 <p>Too much complicated? Don’t worry, we provide <a href="https://github.com/aenthill/hermes">Hermes</a>, a tool for sending events inside a Docker container.</p>
 

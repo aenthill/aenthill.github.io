@@ -23,7 +23,7 @@ $ docker run -ti --rm
 -e "PHEROMONE_HOST_PROJECT_DIR=/host/project/dir"
 -e "PHEROMONE_CONTAINER_PROJECT_DIR=/aenthill"
 -e "PHEROMONE_LOG_LEVEL=INFO"
-aenthill/cassandra aent ADD
+aenthill/cassandra aent "ADD"
 ```
 
 There are several things to note:
@@ -76,5 +76,7 @@ Just don't forget to:
 
 * Set <code>PHEROMONE_FROM</code> with your *Aent* image name
 * Set <code>PHEROMONE_WHOAMI</code> with the recipient image name
+
+**Important:** The entire process will stop if the binary <code>aent</code> returns an exit code != 0.
 
 Too much complicated? Don't worry, we provide [Hermes](https://github.com/aenthill/hermes), a tool for sending events inside a Docker container.
