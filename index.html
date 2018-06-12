@@ -234,28 +234,23 @@ Just don’t forget to:</p>
 
 <p>Below an example of <code>Dockerfile</code>:</p>
 
-<p></p><details>
-  <summary><code>Dockerfile</code></summary>
-  <code>
-  FROM alpine<p></p>
+<pre class="chroma">  FROM alpine
 
-<p># Required for Hermes to know which interpret
-  # to use when calling the Docker client binary.
-  ENV SHELL “/bin/sh”</p>
+  # Required for Hermes to know which interpret to use when calling the Docker client binary.
+  ENV SHELL &#34;/bin/sh&#34;
 
-<p># Installs Docker client.
-  ENV DOCKER_VERSION “18.03.1-ce”
-  RUN wget -qO- <a href="https://download.docker.com/linux/static/stable/x86_64/docker-$DOCKER_VERSION.tgz">https://download.docker.com/linux/static/stable/x86_64/docker-$DOCKER_VERSION.tgz</a> | tar xvz -C . &amp;&amp;<br/>
-      mv ./docker/docker /usr/bin &amp;&amp;<br/>
-      rm -rf ./docker</p>
-
-</code><p><code># Installs Hermes.
-  ENV HERMES_VERSION “latest version”
-  RUN wget -qO- <a href="https://github.com/aenthill/hermes/releases/download/$HERMES_VERSION/hermes_linux_amd64.tar.gz">https://github.com/aenthill/hermes/releases/download/$HERMES_VERSION/hermes_linux_amd64.tar.gz</a> | tar xvz -C . &amp;&amp;<br/>
-      mv ./hermes /usr/bin &amp;&amp;<br/>
+  # Installs Docker client.
+  ENV DOCKER_VERSION &#34;18.03.1-ce&#34;
+  RUN wget -qO- https://download.docker.com/linux/static/stable/x86_64/docker-$DOCKER_VERSION.tgz | tar xvz -C . &amp;&amp;\
+      mv ./docker/docker /usr/bin &amp;&amp;\
+      rm -rf ./docker
+  
+  # Installs Hermes.
+  ENV HERMES_VERSION &#34;latest version&#34;
+  RUN wget -qO- https://github.com/aenthill/hermes/releases/download/$HERMES_VERSION/hermes_linux_amd64.tar.gz | tar xvz -C . &amp;&amp;\
+      mv ./hermes /usr/bin &amp;&amp;\
       rm -f LICENSE README.md
-  </code>
-</p></details><p></p>
+</pre>
 
 <h2 class="Heading"><a class="Anchor" aria-hidden="true" id="hermes.commands" href="#hermes.commands">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>

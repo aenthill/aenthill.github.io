@@ -10,9 +10,7 @@ Its goal is to ease the communication of your *Aent* with others *Aents* of your
 
 Below an example of <code>Dockerfile</code>: 
 
-<details>
-  <summary><code>Dockerfile</code></summary>
-  ```
+```
   FROM alpine
 
   # Required for Hermes to know which interpret to use when calling the Docker client binary.
@@ -29,8 +27,7 @@ Below an example of <code>Dockerfile</code>:
   RUN wget -qO- https://github.com/aenthill/hermes/releases/download/$HERMES_VERSION/hermes_linux_amd64.tar.gz | tar xvz -C . &&\
       mv ./hermes /usr/bin &&\
       rm -f LICENSE README.md
-  ```
-</details>
+```
 
 ## Commands
 
