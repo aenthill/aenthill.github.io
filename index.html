@@ -234,22 +234,22 @@ Just don’t forget to:</p>
 
 <p>Below an example of <code>Dockerfile</code>:</p>
 
-<pre class="chroma">  FROM alpine
+<pre class="chroma">FROM alpine
 
-  # Required for Hermes to know which interpret to use when calling the Docker client binary.
-  ENV SHELL &#34;/bin/sh&#34;
+# Required for Hermes to know which interpret to use when calling the Docker client binary.
+ENV SHELL &#34;/bin/sh&#34;
 
-  # Installs Docker client.
-  ENV DOCKER_VERSION &#34;18.03.1-ce&#34;
-  RUN wget -qO- https://download.docker.com/linux/static/stable/x86_64/docker-$DOCKER_VERSION.tgz | tar xvz -C . &amp;&amp;\
-      mv ./docker/docker /usr/bin &amp;&amp;\
-      rm -rf ./docker
-  
-  # Installs Hermes.
-  ENV HERMES_VERSION &#34;latest version&#34;
-  RUN wget -qO- https://github.com/aenthill/hermes/releases/download/$HERMES_VERSION/hermes_linux_amd64.tar.gz | tar xvz -C . &amp;&amp;\
-      mv ./hermes /usr/bin &amp;&amp;\
-      rm -f LICENSE README.md
+# Installs Docker client.
+ENV DOCKER_VERSION &#34;18.03.1-ce&#34;
+RUN wget -qO- https://download.docker.com/linux/static/stable/x86_64/docker-$DOCKER_VERSION.tgz | tar xvz -C . &amp;&amp;\
+    mv ./docker/docker /usr/bin &amp;&amp;\
+    rm -rf ./docker
+
+# Installs Hermes.
+ENV HERMES_VERSION &#34;latest version&#34;
+RUN wget -qO- https://github.com/aenthill/hermes/releases/download/$HERMES_VERSION/hermes_linux_amd64.tar.gz | tar xvz -C . &amp;&amp;\
+    mv ./hermes /usr/bin &amp;&amp;\
+    rm -f LICENSE README.md
 </pre>
 
 <h2 class="Heading"><a class="Anchor" aria-hidden="true" id="hermes.commands" href="#hermes.commands">
