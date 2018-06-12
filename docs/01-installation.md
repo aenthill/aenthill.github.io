@@ -11,7 +11,7 @@ $ wget -qO- https://github.com/aenthill/aenthill/releases/download/version/binar
 $ sudo mv ./aenthill /usr/local/bin && chmod +x /usr/local/bin/aenthill
 ```
 
-Note: You may find available binaries in the [releases pages](https://github.com/aenthill/aenthill/releases/).
+You may find available binaries in the [releases page](https://github.com/aenthill/aenthill/releases/).
 
 ## Using homebrew
 
