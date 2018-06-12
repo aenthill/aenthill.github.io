@@ -36,6 +36,10 @@
                   <a href="#how_does_it_work">How does it work?</a>
                 </div>
               
+                <div class="item">
+                  <a href="#hermes">Hermes</a>
+                </div>
+              
             </div>
           </div>
 
@@ -158,7 +162,7 @@ aenthill/cassandra aent <span class="s2">&#34;ADD&#34;</span>
 <ul>
 <li><a href="https://github.com/aenthill/aenthill">Aenthill</a> starts the <em>Aent</em> <code>aenthill/cassandra</code> by calling its binary <code>aent</code> with the event name as first argument</li>
 <li>It mounts the current host working directory <code>/host/project/dir</code> to the <em>Aent</em> directory <code>/aenthill</code></li>
-<li>It binds the host Docker socket (more on that later)</li>
+<li>It binds the host Docker socket</li>
 <li>It populates some environment variables</li>
 </ul>
 
@@ -213,6 +217,72 @@ Just don’t forget to:</p>
 </ul>
 
 <p>Too much complicated? Don’t worry, we provide <a href="https://github.com/aenthill/hermes">Hermes</a>, a tool for sending events inside a Docker container.</p>
+
+              </div>
+            
+              <div class="Page" id="hermes">
+                <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="hermes" href="#hermes">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a>Hermes</h1>
+                <p><a href="https://github.com/aenthill/hermes">Hermes</a> is a tool which can be used directly inside an <em>Aent</em> to send events.</p>
+
+<p>Its goal is to ease the communication of your <em>Aent</em> with others <em>Aents</em> of your ecosystem.</p>
+
+<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="hermes.installation" href="#hermes.installation">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a>Installation</h2>
+
+<p>Below an example of <code>Dockerfile</code>:</p>
+
+<p></p><details>
+  <summary><code>Dockerfile</code></summary>
+  <code>
+  FROM alpine<p></p>
+
+<p>…</p>
+
+<p># Required for Hermes to know which interpret to use when calling the Docker client binary.
+  ENV SHELL “/bin/sh”</p>
+
+<p># Installs Docker client.
+  ENV DOCKER_VERSION “18.03.1-ce”
+  RUN wget -qO- <a href="https://download.docker.com/linux/static/stable/x86_64/docker-$DOCKER_VERSION.tgz">https://download.docker.com/linux/static/stable/x86_64/docker-$DOCKER_VERSION.tgz</a> | tar xvz -C . &amp;&amp;<br/>
+      mv ./docker/docker /usr/bin &amp;&amp;<br/>
+      rm -rf ./docker</p>
+
+<p># Installs Hermes.
+  ENV HERMES_VERSION “latest version”
+  RUN wget -qO- <a href="https://github.com/aenthill/hermes/releases/download/$HERMES_VERSION/hermes_linux_amd64.tar.gz">https://github.com/aenthill/hermes/releases/download/$HERMES_VERSION/hermes_linux_amd64.tar.gz</a> | tar xvz -C . &amp;&amp;<br/>
+      mv ./hermes /usr/bin &amp;&amp;<br/>
+      rm -f LICENSE README.md</p>
+
+</code><p><code>…
+  </code>
+</p></details><p></p>
+
+<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="hermes.commands" href="#hermes.commands">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a>Commands</h2>
+
+<h3 class="Heading"><a class="Anchor" aria-hidden="true" id="hermes.commands.dispatch" href="#hermes.commands.dispatch">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a>dispatch</h3>
+
+<pre class="chroma">$ hermes dispatch event <span class="o">[</span>payload<span class="o">]</span>
+</pre>
+
+<p><a href="https://github.com/aenthill/hermes">Hermes</a> will send the given event and payload to all <em>Aents</em> in the <em>Manifest</em> which handles it.</p>
+
+<h3 class="Heading"><a class="Anchor" aria-hidden="true" id="hermes.commands.reply" href="#hermes.commands.reply">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a>reply</h3>
+
+<pre class="chroma">$ hermes reply event <span class="o">[</span>payload<span class="o">]</span>
+</pre>
+
+<p><a href="https://github.com/aenthill/hermes">Hermes</a> will send the given event and payload back to the <em>Aent</em> which which has awaken yours.</p>
+
+<p>It uses the environment variable <code>PHEROMONE_FROM</code> to know which <em>Aent</em> to reply to.</p>
 
               </div>
             
