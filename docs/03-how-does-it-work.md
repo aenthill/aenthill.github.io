@@ -33,3 +33,11 @@ There are several things to note:
 * It binds the host Docker socket (more on that later)
 * It populates some environment variables
 
+Those environment variables allows the *Aent* to understand within which context it has been awaken.
+
+* <code>PHEROMONE_FROM</code>: the event sender (empty if sended by [Aenthill](https://github.com/aenthill/aenthill))
+* <code>PHEROMONE_WHOAMI</code>: the event recipient (the *Aent* itself)
+* <code>PHEROMONE_HOST_PROJECT_DIR</code>: the host project directory, useful if the *Aent* send an event to another *Aent*
+* <code>PHEROMONE_CONTAINER_PROJECT_DIR</code>: the path of the project directory in the *Aent*
+* <code>PHEROMONE_LOG_LEVEL</code>: the log level as defined by the user with [Aenthill](https://github.com/aenthill/aenthill)
+

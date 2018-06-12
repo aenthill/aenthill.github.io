@@ -162,6 +162,16 @@ aenthill/cassandra aent ADD
 <li>It populates some environment variables</li>
 </ul>
 
+<p>Those environment variables allows the <em>Aent</em> to understand within which context it has been awaken.</p>
+
+<ul>
+<li><code>PHEROMONE_FROM</code>: the event sender (empty if sended by <a href="https://github.com/aenthill/aenthill">Aenthill</a>)</li>
+<li><code>PHEROMONE_WHOAMI</code>: the event recipient (the <em>Aent</em> itself)</li>
+<li><code>PHEROMONE_HOST_PROJECT_DIR</code>: the host project directory, useful if the <em>Aent</em> send an event to another <em>Aent</em></li>
+<li><code>PHEROMONE_CONTAINER_PROJECT_DIR</code>: the path of the project directory in the <em>Aent</em></li>
+<li><code>PHEROMONE_LOG_LEVEL</code>: the log level as defined by the user with <a href="https://github.com/aenthill/aenthill">Aenthill</a></li>
+</ul>
+
               </div>
             
             <div class="Footer"></div>
