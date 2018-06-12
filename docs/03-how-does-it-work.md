@@ -67,7 +67,7 @@ This binary should accept two arguments:
 * The event name (a string)
 * The payload (a string too) which contains the data associated to the event
 
-The last argument have to be optional (for instance, it is never filled by [Aenthill](https://github.com/aenthill/aenthill)).
+The last argument has to be optional (for instance, it is never filled by [Aenthill](https://github.com/aenthill/aenthill)).
 
 You may now wondering how an *Aent* is able to communicate with another *Aent*.
 
