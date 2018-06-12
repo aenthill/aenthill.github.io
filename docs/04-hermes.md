@@ -12,11 +12,10 @@ Below an example of <code>Dockerfile</code>:
 
 <details>
   <summary><code>Dockerfile</code></summary>
-  <code>
+  ```
   FROM alpine
 
-  # Required for Hermes to know which interpret 
-  # to use when calling the Docker client binary.
+  # Required for Hermes to know which interpret to use when calling the Docker client binary.
   ENV SHELL "/bin/sh"
 
   # Installs Docker client.
@@ -30,7 +29,7 @@ Below an example of <code>Dockerfile</code>:
   RUN wget -qO- https://github.com/aenthill/hermes/releases/download/$HERMES_VERSION/hermes_linux_amd64.tar.gz | tar xvz -C . &&\
       mv ./hermes /usr/bin &&\
       rm -f LICENSE README.md
-  </code>
+  ```
 </details>
 
 ## Commands
