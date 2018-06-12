@@ -29,7 +29,7 @@ aenthill/cassandra aent ADD
 There are several things to note:
 
 * [Aenthill](https://github.com/aenthill/aenthill) starts the *Aent* <code>aenthill/cassandra</code> by calling its binary <code>aent</code> with the event name as first argument
-* It mounts the current project directory (<code>/host/project/dir</code>) to the *Aent* directory <code>/aenthill</code>
+* It mounts the current host working directory <code>/host/project/dir</code> to the *Aent* directory <code>/aenthill</code>
 * It binds the host Docker socket (more on that later)
-* Its populates some environment variables
+* It populates some environment variables
 
