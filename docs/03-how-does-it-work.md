@@ -35,9 +35,28 @@ There are several things to note:
 
 Those environment variables allows the *Aent* to understand within which context it has been awaken.
 
-* <code>PHEROMONE_FROM</code>: the event sender (empty if sended by [Aenthill](https://github.com/aenthill/aenthill))
-* <code>PHEROMONE_WHOAMI</code>: the event recipient (the *Aent* itself)
-* <code>PHEROMONE_HOST_PROJECT_DIR</code>: the host project directory, useful if the *Aent* send an event to another *Aent*
-* <code>PHEROMONE_CONTAINER_PROJECT_DIR</code>: the path of the project directory in the *Aent*
-* <code>PHEROMONE_LOG_LEVEL</code>: the log level as defined by the user with [Aenthill](https://github.com/aenthill/aenthill)
+<details>
+  <summary><code>PHEROMONE_FROM</code></summary>
+  <p>The event sender (empty if sended by [Aenthill](https://github.com/aenthill/aenthill)).</p>
+</details>
+
+<details>
+  <summary><code>PHEROMONE_WHOAMI</code></summary>
+  <p>The event recipient (the *Aent* itself).</p>
+</details>
+
+<details>
+  <summary><code>PHEROMONE_HOST_PROJECT_DIR</code></summary>
+  <p>The host project directory, useful if the *Aent* sends an event to another *Aent*.</p>
+</details>
+
+<details>
+  <summary><code>PHEROMONE_CONTAINER_PROJECT_DIR</code></summary>
+  <p>The path of the project directory in the *Aent*.</p>
+</details>
+
+<details>
+  <summary><code>PHEROMONE_LOG_LEVEL</code></summary>
+  <p>The log level as defined by the user with [Aenthill](https://github.com/aenthill/aenthill).</p>
+</details>
 
