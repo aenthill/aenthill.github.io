@@ -6,12 +6,12 @@ title: Installation
 
 ## Using wget
 
-Find the binary corresponding to your architecture and install it using the following command:
-
 ```bash
-$ wget -qO- https://github.com/aenthill/aenthill/releases/download/{{ version }}/aenthill_linux_{{ architecture }}.tar.gz | tar xvz -C .
+$ wget -qO- https://github.com/aenthill/aenthill/releases/download/version/binary.tar.gz | tar xvz -C .
 $ sudo mv ./aenthill /usr/local/bin && chmod +x /usr/local/bin/aenthill
 ```
+
+Note: You may find available binaries in the [releases pages](https://github.com/aenthill/aenthill/releases/).
 
 ## Using homebrew
 
