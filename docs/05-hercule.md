@@ -2,7 +2,7 @@
 title: Hercule
 ---
 
-[Hercule](https://github.com/aenthill/hercule) for manipulating a *Manifest* inside an *Aent*.
+[Hercule](https://github.com/aenthill/hercule) is a tool for manipulating a *Manifest* inside an *Aent*.
 
 For now, [Hercule](https://github.com/aenthill/hercule) provides only one command, 
 command allowing your *Aent* to specify which events it handles by updating the *Manifest* <code>aenthill.json</code>.
