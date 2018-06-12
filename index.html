@@ -48,9 +48,32 @@ but it shares a part of the task to handle like an ant within its colony.</p>
                 <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="installation" href="#installation">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Installation</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque efficitur felis vel rhoncus maximus. Maecenas in hendrerit dolor. Morbi semper commodo enim, eu posuere elit scelerisque id. Integer non turpis a ex semper varius vitae et risus. Integer ut semper diam. Suspendisse mattis in ipsum sit amet dapibus. Ut dictum ipsum in augue pretium blandit. Nam semper pulvinar urna ut semper. Cras posuere quam vel libero vestibulum tincidunt. Donec ac gravida mauris. Integer eleifend magna ac justo luctus, sit amet tincidunt ante feugiat. Fusce ullamcorper nulla nisi, in interdum libero efficitur eget.</p>
+                <p><a href="https://github.com/aenthill/aenthill">Aenthill</a> is distributed in a binary form and can be installed in many ways.</p>
 
-<p>Integer sollicitudin ex turpis, eget dictum enim volutpat non. Curabitur aliquam vehicula ipsum, eu lobortis dui pellentesque ac. Proin neque quam, pretium ut dignissim ac, gravida id risus. Vestibulum ac felis mi. Nullam lectus sapien, dignissim vitae sem eu, efficitur consectetur purus. Vivamus at lobortis ante. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum sit amet condimentum massa. Nulla eu egestas lorem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="installation.using_wget" href="#installation.using_wget">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a>Using wget</h2>
+
+<p>Find the binary corresponding to your architecture and install it using the following command:</p>
+
+<pre class="chroma">$ wget -qO- https://github.com/aenthill/aenthill/releases/download/<span class="o">{{</span> version <span class="o">}}</span>/aenthill_linux_<span class="o">{{</span> architecture <span class="o">}}</span>.tar.gz <span class="p">|</span> tar xvz -C .
+$ sudo mv ./aenthill /usr/local/bin <span class="o">&amp;&amp;</span> chmod +x /usr/local/bin/aenthill
+</pre>
+
+<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="installation.using_homebrew" href="#installation.using_homebrew">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a>Using homebrew</h2>
+
+<pre class="chroma">$ brew install aenthill/tap/aenthill
+</pre>
+
+<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="installation.using_scoop" href="#installation.using_scoop">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a>Using Scoop</h2>
+
+<pre class="chroma">$ scoope bucket add aenthill https://github.com/aenthill/scoop-bucket.git
+$ scoop install aenthill
+</pre>
 
               </div>
             
