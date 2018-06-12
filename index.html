@@ -189,23 +189,25 @@ aenthill/cassandra aent ADD
   <p>The log level as defined by the user with <a href="https://github.com/aenthill/aenthill">Aenthill</a>.</p>
 </details><p></p>
 
-<p>As you undestand, an <em>Aent</em> is a Docker image which has a binary called <code>aent</code>. This binary should accept two arguments:</p>
+<p>As you undestand, an <em>Aent</em> is a Docker image which has a binary called <code>aent</code>.</p>
+
+<p>This binary should accept two arguments:</p>
 
 <ul>
 <li>The event name (a string)</li>
 <li>The payload (a string too) which contains the data associated to the event</li>
 </ul>
 
-<p>The last argument have to be optional (for instance, it is never filled by <a href="https://github.com/aenthill/aenthill">Aenthill</a>.</p>
+<p>The last argument have to be optional (for instance, it is never filled by <a href="https://github.com/aenthill/aenthill">Aenthill</a>).</p>
 
-<p>You may now wondering how an <em>Aent</em> is able to communicate with another <em>Aents</em>.</p>
+<p>You may now wondering how an <em>Aent</em> is able to communicate with another <em>Aent</em>.</p>
 
 <p>Actually, it works the same as <a href="https://github.com/aenthill/aenthill">Aenthill</a>: use the Docker client binary with almost the same options.
 Just don’t forget to:</p>
 
 <ul>
 <li>Set <code>PHEROMONE_FROM</code> with your <em>Aent</em> image name</li>
-<li>Set <code>PHEROMONE_WHOAMI</code> witht the recipient image name</li>
+<li>Set <code>PHEROMONE_WHOAMI</code> with the recipient image name</li>
 </ul>
 
 <p>Too much complicated? Don’t worry, we provide <a href="https://github.com/aenthill/hermes">Hermes</a>, a tool for sending events inside a Docker container.</p>
