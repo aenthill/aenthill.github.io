@@ -33,8 +33,8 @@ $ hercule set:handled-events [event...]
 
 This command allows your *Aent* to specify which events it handles by updating the *Manifest* <code>aenthill.json</code>.
 
-Next time [Hermes](https://github.com/aenthill/hermes) will dispatch an event, your *Aent* will be awaken only if it handles the given events.
+Next time [Hermes](https://github.com/aenthill/hermes) will dispatch an event, your *Aent* will be awaken only if it handles it.
 
-**If not event given, your *Aent* will always be awaken by incoming events!**
+**If no event given, your *Aent* will always be awaken by incoming events!**
 
 This command should be called when your *Aent* is awaken by the <code>ADD</code> event from [Aenthill](https://github.com/aenthill/aenthill)
