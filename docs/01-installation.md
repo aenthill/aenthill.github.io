@@ -4,7 +4,7 @@ title: Installation
 
 [Aenthill](https://github.com/aenthill/aenthill) is distributed in a binary form and can be installed in many ways.
 
-The only requirement is to have *Docker* installed and running on your host (always use the latest version).
+The only requirement is to have Docker installed and running on your host (always use the latest version).
 
 ## Using wget
 
