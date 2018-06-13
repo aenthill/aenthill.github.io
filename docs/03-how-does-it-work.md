@@ -60,7 +60,9 @@ Those environment variables allows the *Aent* to understand within which context
   <p>The log level as defined by the user with [Aenthill](https://github.com/aenthill/aenthill).</p>
 </details>
 
-As you undestand, an *Aent* is a Docker image which has a binary called <code>aent</code>. 
+## Aent
+
+As you understand, an *Aent* is a Docker image which has a binary called <code>aent</code>. 
 
 This binary should accept two arguments:
 
