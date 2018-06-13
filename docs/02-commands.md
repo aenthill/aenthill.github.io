@@ -19,7 +19,7 @@ $ aenthill init
 Once your *manifest* created, you may add *aents* by using:
 
 ```bash
-$ aenthill add image [image...]
+$ aenthill add image [images...]
 ```
 
 [Aenthill](https://github.com/aenthill/aenthill) will add them to your *manifest* and send the event <code>ADD</code> to them.
@@ -29,7 +29,7 @@ $ aenthill add image [image...]
 You may also remove *aents* by using:
 
 ```bash
-$ aenthill rm image [image...]
+$ aenthill rm image [images...]
 ```
 
 [Aenthill](https://github.com/aenthill/aenthill) will remove them from your *manifest* and send the event <code>REMOVE</code> to them.

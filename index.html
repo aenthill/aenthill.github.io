@@ -115,7 +115,7 @@ directory.</p>
 
 <p>The binary <code>aenthill</code> also let you update to the latest version with the following command:</p>
 
-<pre class="chroma">$ aenthill upgrade <span class="o">[</span>-t version<span class="o">]</span>
+<pre class="chroma">$ aenthill self:update <span class="o">[</span>-t --target version<span class="o">]</span>
 </pre>
 
 <p>Last but not least, verify installation with:</p>
@@ -148,7 +148,7 @@ directory.</p>
 
 <p>Once your <em>manifest</em> created, you may add <em>aents</em> by using:</p>
 
-<pre class="chroma">$ aenthill add image <span class="o">[</span>image...<span class="o">]</span>
+<pre class="chroma">$ aenthill add image <span class="o">[</span>images...<span class="o">]</span>
 </pre>
 
 <p><a href="https://github.com/aenthill/aenthill">Aenthill</a> will add them to your <em>manifest</em> and send the event <code>ADD</code> to them.</p>
@@ -159,7 +159,7 @@ directory.</p>
 
 <p>You may also remove <em>aents</em> by using:</p>
 
-<pre class="chroma">$ aenthill rm image <span class="o">[</span>image...<span class="o">]</span>
+<pre class="chroma">$ aenthill rm image <span class="o">[</span>images...<span class="o">]</span>
 </pre>
 
 <p><a href="https://github.com/aenthill/aenthill">Aenthill</a> will remove them from your <em>manifest</em> and send the event <code>REMOVE</code> to them.</p>
@@ -348,7 +348,7 @@ RUN curl -sf https://raw.githubusercontent.com/aenthill/hercule/master/install.s
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>set:handled-events</h3>
 
-<pre class="chroma">$ hercule set:handled-events <span class="o">[</span>event...<span class="o">]</span>
+<pre class="chroma">$ hercule set:handled-events <span class="o">[</span>events...<span class="o">]</span>
 </pre>
 
 <p>This command allows your <em>aent</em> to specify which events it handles by updating the <em>manifest</em>.</p>

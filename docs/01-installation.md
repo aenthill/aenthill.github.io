@@ -27,7 +27,7 @@ You may find all available versions in the [releases page](https://github.com/ae
 The binary <code>aenthill</code> also let you update to the latest version with the following command:
 
 ```bash
-$ aenthill upgrade [-t version]
+$ aenthill self:update [-t --target version]
 ```
 
 Last but not least, verify installation with:

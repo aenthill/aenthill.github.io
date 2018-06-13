@@ -26,7 +26,7 @@ RUN curl -sf https://raw.githubusercontent.com/aenthill/hercule/master/install.s
 ### set:handled-events
 
 ```bash
-$ hercule set:handled-events [event...]
+$ hercule set:handled-events [events...]
 ```
 
 This command allows your *aent* to specify which events it handles by updating the *manifest*.
