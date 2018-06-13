@@ -65,7 +65,6 @@ Those environment variables allows the *Aent* to understand within which context
 As you understand, an *Aent* is a Docker image which has a binary called <code>aent</code>. 
 
 This binary should accept two arguments:
-
 * The event name (a string)
 * The payload (a string too) which contains the data associated to the event
 
