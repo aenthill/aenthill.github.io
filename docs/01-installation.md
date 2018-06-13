@@ -2,28 +2,36 @@
 title: Installation
 ---
 
-[Aenthill](https://github.com/aenthill/aenthill) is distributed in a binary form and can be installed in many ways.
+[Aenthill](https://github.com/aenthill/aenthill) is distributed in a binary form and
+the only requirement is to have Docker installed and running on your host (always use the latest version).
 
-The only requirement is to have Docker installed and running on your host (always use the latest version).
-
-## Using wget
+In order to get <code>aenthill</code>, run the following command:
 
 ```bash
-$ wget -qO- https://github.com/aenthill/aenthill/releases/download/version/binary.tar.gz | tar xvz -C .
-$ sudo mv ./aenthill /usr/local/bin && chmod +x /usr/local/bin/aenthill
+$ curl -sf https://raw.githubusercontent.com/aenthill/aenthill/master/install.sh | BINDIR=/usr/local/bin sh
 ```
 
-You may find available binaries in the [releases page](https://github.com/aenthill/aenthill/releases/).
+This will install the latest release of [Aenthill](https://github.com/aenthill/aenthill) in the <code>/usr/local/bin</code>
+directory.
 
-## Using homebrew
+**You may of course change the destination directory by updating <code>BINDIR</code> value.**
+
+If you want to install a specific version of [Aenthill](https://github.com/aenthill/aenthill), you may also run:
 
 ```bash
-$ brew install aenthill/tap/aenthill
+$ curl -sf https://raw.githubusercontent.com/aenthill/aenthill/master/install.sh | BINDIR=/usr/local/bin sh -s version
 ```
 
-## Using Scoop
+You may find all available versions in the [releases page](https://github.com/aenthill/aenthill/releases/).
+
+The binary <code>aenthill</code> also let you update to the latest version with the following command:
 
 ```bash
-$ scoope bucket add aenthill https://github.com/aenthill/scoop-bucket.git
-$ scoop install aenthill
+$ aenthill upgrade [-t version]
+```
+
+Last but not least, verify installation with:
+
+```bash
+$ aenthill --version
 ```

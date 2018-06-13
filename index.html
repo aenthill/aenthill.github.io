@@ -93,33 +93,34 @@ but it shares a part of the task to handle like an ant within its colony.</p>
                 <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="installation" href="#installation">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Installation</h1>
-                <p><a href="https://github.com/aenthill/aenthill">Aenthill</a> is distributed in a binary form and can be installed in many ways.</p>
+                <p><a href="https://github.com/aenthill/aenthill">Aenthill</a> is distributed in a binary form and
+the only requirement is to have Docker installed and running on your host (always use the latest version).</p>
 
-<p>The only requirement is to have Docker installed and running on your host (always use the latest version).</p>
+<p>In order to get <code>aenthill</code>, run the following command:</p>
 
-<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="installation.using_wget" href="#installation.using_wget">
-	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-</a>Using wget</h2>
-
-<pre class="chroma">$ wget -qO- https://github.com/aenthill/aenthill/releases/download/version/binary.tar.gz <span class="p">|</span> tar xvz -C .
-$ sudo mv ./aenthill /usr/local/bin <span class="o">&amp;&amp;</span> chmod +x /usr/local/bin/aenthill
+<pre class="chroma">$ curl -sf https://raw.githubusercontent.com/aenthill/aenthill/master/install.sh <span class="p">|</span> <span class="nv">BINDIR</span><span class="o">=</span>/usr/local/bin sh
 </pre>
 
-<p>You may find available binaries in the <a href="https://github.com/aenthill/aenthill/releases/">releases page</a>.</p>
+<p>This will install the latest release of <a href="https://github.com/aenthill/aenthill">Aenthill</a> in the <code>/usr/local/bin</code>
+directory.</p>
 
-<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="installation.using_homebrew" href="#installation.using_homebrew">
-	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-</a>Using homebrew</h2>
+<p><strong>You may of course change the destination directory by updating <code>BINDIR</code> value.</strong></p>
 
-<pre class="chroma">$ brew install aenthill/tap/aenthill
+<p>If you want to install a specific version of <a href="https://github.com/aenthill/aenthill">Aenthill</a>, you may also run:</p>
+
+<pre class="chroma">$ curl -sf https://raw.githubusercontent.com/aenthill/aenthill/master/install.sh <span class="p">|</span> <span class="nv">BINDIR</span><span class="o">=</span>/usr/local/bin sh -s version
 </pre>
 
-<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="installation.using_scoop" href="#installation.using_scoop">
-	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-</a>Using Scoop</h2>
+<p>You may find all available versions in the <a href="https://github.com/aenthill/aenthill/releases/">releases page</a>.</p>
 
-<pre class="chroma">$ scoope bucket add aenthill https://github.com/aenthill/scoop-bucket.git
-$ scoop install aenthill
+<p>The binary <code>aenthill</code> also let you update to the latest version with the following command:</p>
+
+<pre class="chroma">$ aenthill upgrade <span class="o">[</span>-t version<span class="o">]</span>
+</pre>
+
+<p>Last but not least, verify installation with:</p>
+
+<pre class="chroma">$ aenthill --version
 </pre>
 
               </div>
