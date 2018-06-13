@@ -35,4 +35,4 @@ Next time [Hermes](https://github.com/aenthill/hermes) will dispatch an event, y
 
 **If no event given, your *aent* will always be awaken by incoming events!**
 
-This command should be called when your *aent* is awaken by the <code>ADD</code> event from [Aenthill](https://github.com/aenthill/aenthill)
+This command should be called when your *aent* is awaken by the <code>ADD</code> event from [Aenthill](https://github.com/aenthill/aenthill).
