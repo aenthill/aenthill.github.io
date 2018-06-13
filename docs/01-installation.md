@@ -14,7 +14,7 @@ $ curl -sf https://raw.githubusercontent.com/aenthill/aenthill/master/install.sh
 This will install the latest release of [Aenthill](https://github.com/aenthill/aenthill) in the <code>/usr/local/bin</code>
 directory.
 
-**You may of course change the destination directory by updating <code>BINDIR</code> value.**
+**You may of course change the destination directory by updating the <code>BINDIR</code> value.**
 
 If you want to install a specific version of [Aenthill](https://github.com/aenthill/aenthill), you may also run:
 
