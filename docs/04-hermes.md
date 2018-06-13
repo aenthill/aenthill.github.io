@@ -2,9 +2,9 @@
 title: Hermes
 ---
 
-[Hermes](https://github.com/aenthill/hermes) is a tool which can be used directly inside an *Aent* to send events.
+[Hermes](https://github.com/aenthill/hermes) is a tool which can be used directly inside an *aent* to send events.
 
-Its goal is to ease the communication of your *Aent* with others *Aents* of your ecosystem.
+Its goal is to ease the communication of your *aent* with others *aents* of your ecosystem.
 
 ## Installation
 
@@ -41,7 +41,7 @@ RUN wget -qO- https://github.com/aenthill/hermes/releases/download/$HERMES_VERSI
 $ hermes dispatch event [payload]
 ```
 
-[Hermes](https://github.com/aenthill/hermes) will send the given event and payload to all *Aents* in the *Manifest* which handles it.
+[Hermes](https://github.com/aenthill/hermes) will send the given event and payload to all *aents* in the *manifest* which handles it.
 
 ### reply
 
@@ -49,6 +49,6 @@ $ hermes dispatch event [payload]
 $ hermes reply event [payload]
 ```
 
-[Hermes](https://github.com/aenthill/hermes) will send the given event and payload back to the *Aent* which which has awaken yours.
+[Hermes](https://github.com/aenthill/hermes) will send the given event and payload back to the *aent* which which has awaken yours.
 
-It uses the environment variable <code>PHEROMONE_FROM</code> to know which *Aent* to reply to.
+It uses the environment variable <code>PHEROMONE_FROM</code> to know which *aent* to reply to.

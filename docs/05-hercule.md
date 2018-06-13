@@ -2,7 +2,7 @@
 title: Hercule
 ---
 
-[Hercule](https://github.com/aenthill/hercule) is a tool for manipulating a *Manifest* inside an *Aent*.
+[Hercule](https://github.com/aenthill/hercule) is a tool for manipulating a *manifest* inside an *aent*.
 
 
 ## Installation
@@ -31,10 +31,10 @@ RUN wget -qO- https://github.com/aenthill/hercule/releases/download/$HERCULE_VER
 $ hercule set:handled-events [event...]
 ```
 
-This command allows your *Aent* to specify which events it handles by updating the *Manifest*.
+This command allows your *aent* to specify which events it handles by updating the *manifest*.
 
-Next time [Hermes](https://github.com/aenthill/hermes) will dispatch an event, your *Aent* will be awaken only if it handles it.
+Next time [Hermes](https://github.com/aenthill/hermes) will dispatch an event, your *aent* will be awaken only if it handles it.
 
-**If no event given, your *Aent* will always be awaken by incoming events!**
+**If no event given, your *aent* will always be awaken by incoming events!**
 
-This command should be called when your *Aent* is awaken by the <code>ADD</code> event from [Aenthill](https://github.com/aenthill/aenthill)
+This command should be called when your *aent* is awaken by the <code>ADD</code> event from [Aenthill](https://github.com/aenthill/aenthill)

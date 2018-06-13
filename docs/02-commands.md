@@ -6,7 +6,7 @@ title: Commands
 
 ## init
 
-[Aenthill](https://github.com/aenthill/aenthill) relies on an <code>aenthill.json</code> file (called *Manifest*) which gathers all *Aents* of your ecosystem.
+[Aenthill](https://github.com/aenthill/aenthill) relies on an <code>aenthill.json</code> file (called *manifest*) which gathers all *aents* of your ecosystem.
 
 You may create this file in your current directory by running:
 
@@ -16,20 +16,20 @@ $ aenthill init
 
 ## add
 
-Once your *Manifest* created, you may add *Aents* by using:
+Once your *manifest* created, you may add *aents* by using:
 
 ```bash
 $ aenthill add image [image...]
 ```
 
-[Aenthill](https://github.com/aenthill/aenthill) will add them to your *Manifest* and send the event <code>ADD</code> to them.
+[Aenthill](https://github.com/aenthill/aenthill) will add them to your *manifest* and send the event <code>ADD</code> to them.
 
 ## rm
 
-You may also remove *Aents* by using:
+You may also remove *aents* by using:
 
 ```bash
 $ aenthill rm image [image...]
 ```
 
-[Aenthill](https://github.com/aenthill/aenthill) will remove them from your *Manifest* and send the event <code>REMOVE</code> to them.
+[Aenthill](https://github.com/aenthill/aenthill) will remove them from your *manifest* and send the event <code>REMOVE</code> to them.

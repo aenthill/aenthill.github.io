@@ -84,7 +84,7 @@
 </a>Introduction</h1>
                 <p><a href="https://github.com/aenthill/aenthill">Aenthill</a> is a solution for allowing Docker containers to communicate with each other in order to fulfill a task in the current host directory.</p>
 
-<p>Each of those Docker containers (called <em>Aent</em>) is not aware of its peers. It is however able to recieve and communicate events to them. In other words, an <em>Aent</em> is not necessarily smart
+<p>Each of those Docker containers (called <em>aent</em>) is not aware of its peers. It is however able to recieve and communicate events to them. In other words, an <em>aent</em> is not necessarily smart
 but it shares a part of the task to handle like an ant within its colony.</p>
 
               </div>
@@ -134,7 +134,7 @@ $ scoop install aenthill
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>init</h2>
 
-<p><a href="https://github.com/aenthill/aenthill">Aenthill</a> relies on an <code>aenthill.json</code> file (called <em>Manifest</em>) which gathers all <em>Aents</em> of your ecosystem.</p>
+<p><a href="https://github.com/aenthill/aenthill">Aenthill</a> relies on an <code>aenthill.json</code> file (called <em>manifest</em>) which gathers all <em>aents</em> of your ecosystem.</p>
 
 <p>You may create this file in your current directory by running:</p>
 
@@ -145,23 +145,23 @@ $ scoop install aenthill
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>add</h2>
 
-<p>Once your <em>Manifest</em> created, you may add <em>Aents</em> by using:</p>
+<p>Once your <em>manifest</em> created, you may add <em>aents</em> by using:</p>
 
 <pre class="chroma">$ aenthill add image <span class="o">[</span>image...<span class="o">]</span>
 </pre>
 
-<p><a href="https://github.com/aenthill/aenthill">Aenthill</a> will add them to your <em>Manifest</em> and send the event <code>ADD</code> to them.</p>
+<p><a href="https://github.com/aenthill/aenthill">Aenthill</a> will add them to your <em>manifest</em> and send the event <code>ADD</code> to them.</p>
 
 <h2 class="Heading"><a class="Anchor" aria-hidden="true" id="commands.rm" href="#commands.rm">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>rm</h2>
 
-<p>You may also remove <em>Aents</em> by using:</p>
+<p>You may also remove <em>aents</em> by using:</p>
 
 <pre class="chroma">$ aenthill rm image <span class="o">[</span>image...<span class="o">]</span>
 </pre>
 
-<p><a href="https://github.com/aenthill/aenthill">Aenthill</a> will remove them from your <em>Manifest</em> and send the event <code>REMOVE</code> to them.</p>
+<p><a href="https://github.com/aenthill/aenthill">Aenthill</a> will remove them from your <em>manifest</em> and send the event <code>REMOVE</code> to them.</p>
 
               </div>
             
@@ -169,16 +169,16 @@ $ scoop install aenthill
                 <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="how_does_it_work" href="#how_does_it_work">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>How does it work?</h1>
-                <p>As explained before, an ecosystem of <em>Aents</em> is working by sending events to each other.</p>
+                <p>As explained before, an ecosystem of <em>aents</em> is working by sending events to each other.</p>
 
-<p>An event may be sent by <a href="https://github.com/aenthill/aenthill">Aenthill</a> directly or by another <em>Aent</em>.</p>
+<p>An event may be sent by <a href="https://github.com/aenthill/aenthill">Aenthill</a> directly or by another <em>aent</em>.</p>
 
 <p>Let’s start with <a href="https://github.com/aenthill/aenthill">Aenthill</a>:</p>
 
 <pre class="chroma">$ aenthill add aenthill/cassandra
 </pre>
 
-<p>This command will send the event <code>ADD</code> to the <em>Aent</em> <code>aenthill/cassandra</code> by running:</p>
+<p>This command will send the event <code>ADD</code> to the <em>aent</em> <code>aenthill/cassandra</code> by running:</p>
 
 <pre class="chroma">$ docker run -ti --rm
 -v <span class="s2">&#34;/var/run/docker.sock:/var/run/docker.sock&#34;</span>
@@ -194,13 +194,13 @@ aenthill/cassandra aent <span class="s2">&#34;ADD&#34;</span>
 <p>There are several things to note:</p>
 
 <ul>
-<li><a href="https://github.com/aenthill/aenthill">Aenthill</a> starts the <em>Aent</em> <code>aenthill/cassandra</code> by calling its binary <code>aent</code> with the event name as first argument</li>
-<li>It mounts the current host working directory <code>/host/project/dir</code> to the <em>Aent</em> directory <code>/aenthill</code></li>
+<li><a href="https://github.com/aenthill/aenthill">Aenthill</a> starts the <em>aent</em> <code>aenthill/cassandra</code> by calling its binary <code>aent</code> with the event name as first argument</li>
+<li>It mounts the current host working directory <code>/host/project/dir</code> to the <em>aent</em> directory <code>/aenthill</code></li>
 <li>It binds the host Docker socket</li>
 <li>It populates some environment variables</li>
 </ul>
 
-<p>Those environment variables allows the <em>Aent</em> to understand within which context it has been awaken.</p>
+<p>Those environment variables allows the <em>aent</em> to understand within which context it has been awaken.</p>
 
 <p></p><details>
   <summary><code>PHEROMONE_FROM</code></summary>
@@ -209,17 +209,17 @@ aenthill/cassandra aent <span class="s2">&#34;ADD&#34;</span>
 
 <p></p><details>
   <summary><code>PHEROMONE_WHOAMI</code></summary>
-  <p>The event recipient (the <em>Aent</em> itself).</p>
+  <p>The event recipient (the <em>aent</em> itself).</p>
 </details><p></p>
 
 <p></p><details>
   <summary><code>PHEROMONE_HOST_PROJECT_DIR</code></summary>
-  <p>The host project directory, useful if the <em>Aent</em> sends an event to another <em>Aent</em>.</p>
+  <p>The host project directory, useful if the <em>aent</em> sends an event to another <em>aent</em>.</p>
 </details><p></p>
 
 <p></p><details>
   <summary><code>PHEROMONE_CONTAINER_PROJECT_DIR</code></summary>
-  <p>The path of the project directory in the <em>Aent</em>.</p>
+  <p>The path of the project directory in the <em>aent</em>.</p>
 </details><p></p>
 
 <p></p><details>
@@ -229,9 +229,9 @@ aenthill/cassandra aent <span class="s2">&#34;ADD&#34;</span>
 
 <h2 class="Heading"><a class="Anchor" aria-hidden="true" id="how_does_it_work.aent" href="#how_does_it_work.aent">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-</a>Aent</h2>
+</a>aent</h2>
 
-<p>As you understand, an <em>Aent</em> is a Docker image which has a binary called <code>aent</code>. This binary should accept two arguments:</p>
+<p>As you understand, an <em>aent</em> is a Docker image which has a binary called <code>aent</code>. This binary should accept two arguments:</p>
 
 <ul>
 <li>The event name (a string)</li>
@@ -242,13 +242,13 @@ aenthill/cassandra aent <span class="s2">&#34;ADD&#34;</span>
 
 <p><strong>The entire process will stop if the binary <code>aent</code> returns an exit code different than 0.</strong></p>
 
-<p>You may now wondering how an <em>Aent</em> is able to communicate with another <em>Aent</em>.</p>
+<p>You may now wondering how an <em>aent</em> is able to communicate with another <em>aent</em>.</p>
 
 <p>Actually, it works the same as <a href="https://github.com/aenthill/aenthill">Aenthill</a>: use the Docker client binary with almost the same options.
 Just don’t forget to:</p>
 
 <ul>
-<li>Set <code>PHEROMONE_FROM</code> with your <em>Aent</em> image name</li>
+<li>Set <code>PHEROMONE_FROM</code> with your <em>aent</em> image name</li>
 <li>Set <code>PHEROMONE_WHOAMI</code> with the recipient image name</li>
 </ul>
 
@@ -260,9 +260,9 @@ Just don’t forget to:</p>
                 <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="hermes" href="#hermes">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Hermes</h1>
-                <p><a href="https://github.com/aenthill/hermes">Hermes</a> is a tool which can be used directly inside an <em>Aent</em> to send events.</p>
+                <p><a href="https://github.com/aenthill/hermes">Hermes</a> is a tool which can be used directly inside an <em>aent</em> to send events.</p>
 
-<p>Its goal is to ease the communication of your <em>Aent</em> with others <em>Aents</em> of your ecosystem.</p>
+<p>Its goal is to ease the communication of your <em>aent</em> with others <em>aents</em> of your ecosystem.</p>
 
 <h2 class="Heading"><a class="Anchor" aria-hidden="true" id="hermes.installation" href="#hermes.installation">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
@@ -303,7 +303,7 @@ RUN wget -qO- https://github.com/aenthill/hermes/releases/download/$HERMES_VERSI
 <pre class="chroma">$ hermes dispatch event <span class="o">[</span>payload<span class="o">]</span>
 </pre>
 
-<p><a href="https://github.com/aenthill/hermes">Hermes</a> will send the given event and payload to all <em>Aents</em> in the <em>Manifest</em> which handles it.</p>
+<p><a href="https://github.com/aenthill/hermes">Hermes</a> will send the given event and payload to all <em>aents</em> in the <em>manifest</em> which handles it.</p>
 
 <h3 class="Heading"><a class="Anchor" aria-hidden="true" id="hermes.commands.reply" href="#hermes.commands.reply">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
@@ -312,9 +312,9 @@ RUN wget -qO- https://github.com/aenthill/hermes/releases/download/$HERMES_VERSI
 <pre class="chroma">$ hermes reply event <span class="o">[</span>payload<span class="o">]</span>
 </pre>
 
-<p><a href="https://github.com/aenthill/hermes">Hermes</a> will send the given event and payload back to the <em>Aent</em> which which has awaken yours.</p>
+<p><a href="https://github.com/aenthill/hermes">Hermes</a> will send the given event and payload back to the <em>aent</em> which which has awaken yours.</p>
 
-<p>It uses the environment variable <code>PHEROMONE_FROM</code> to know which <em>Aent</em> to reply to.</p>
+<p>It uses the environment variable <code>PHEROMONE_FROM</code> to know which <em>aent</em> to reply to.</p>
 
               </div>
             
@@ -322,7 +322,7 @@ RUN wget -qO- https://github.com/aenthill/hermes/releases/download/$HERMES_VERSI
                 <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="hercule" href="#hercule">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Hercule</h1>
-                <p><a href="https://github.com/aenthill/hercule">Hercule</a> is a tool for manipulating a <em>Manifest</em> inside an <em>Aent</em>.</p>
+                <p><a href="https://github.com/aenthill/hercule">Hercule</a> is a tool for manipulating a <em>manifest</em> inside an <em>aent</em>.</p>
 
 <h2 class="Heading"><a class="Anchor" aria-hidden="true" id="hercule.installation" href="#hercule.installation">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
@@ -354,13 +354,13 @@ RUN wget -qO- https://github.com/aenthill/hercule/releases/download/$HERCULE_VER
 <pre class="chroma">$ hercule set:handled-events <span class="o">[</span>event...<span class="o">]</span>
 </pre>
 
-<p>This command allows your <em>Aent</em> to specify which events it handles by updating the <em>Manifest</em>.</p>
+<p>This command allows your <em>aent</em> to specify which events it handles by updating the <em>manifest</em>.</p>
 
-<p>Next time <a href="https://github.com/aenthill/hermes">Hermes</a> will dispatch an event, your <em>Aent</em> will be awaken only if it handles it.</p>
+<p>Next time <a href="https://github.com/aenthill/hermes">Hermes</a> will dispatch an event, your <em>aent</em> will be awaken only if it handles it.</p>
 
-<p><strong>If no event given, your <em>Aent</em> will always be awaken by incoming events!</strong></p>
+<p><strong>If no event given, your <em>aent</em> will always be awaken by incoming events!</strong></p>
 
-<p>This command should be called when your <em>Aent</em> is awaken by the <code>ADD</code> event from <a href="https://github.com/aenthill/aenthill">Aenthill</a></p>
+<p>This command should be called when your <em>aent</em> is awaken by the <code>ADD</code> event from <a href="https://github.com/aenthill/aenthill">Aenthill</a></p>
 
               </div>
             
@@ -368,7 +368,7 @@ RUN wget -qO- https://github.com/aenthill/hercule/releases/download/$HERCULE_VER
                 <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="colonies" href="#colonies">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Colonies</h1>
-                <p>A colony is an ecosystem of <em>Aents</em> which are able to work together.</p>
+                <p>A colony is an ecosystem of <em>aents</em> which are able to work together.</p>
 
 <ul>
 <li><a href="https://google.fr">TheAentMachine</a> is a colony for adding services on the fly in <code>docker-compose.yml</code> files and Kubernetes configuration files</li>

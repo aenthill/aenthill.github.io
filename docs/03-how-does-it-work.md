@@ -2,9 +2,9 @@
 title: How does it work?
 ---
 
-As explained before, an ecosystem of *Aents* is working by sending events to each other.
+As explained before, an ecosystem of *aents* is working by sending events to each other.
 
-An event may be sent by [Aenthill](https://github.com/aenthill/aenthill) directly or by another *Aent*.
+An event may be sent by [Aenthill](https://github.com/aenthill/aenthill) directly or by another *aent*.
 
 Let's start with [Aenthill](https://github.com/aenthill/aenthill):
 
@@ -12,7 +12,7 @@ Let's start with [Aenthill](https://github.com/aenthill/aenthill):
 $ aenthill add aenthill/cassandra
 ```
 
-This command will send the event <code>ADD</code> to the *Aent* <code>aenthill/cassandra</code> by running:
+This command will send the event <code>ADD</code> to the *aent* <code>aenthill/cassandra</code> by running:
 
 ```bash
 $ docker run -ti --rm
@@ -28,12 +28,12 @@ aenthill/cassandra aent "ADD"
 
 There are several things to note:
 
-* [Aenthill](https://github.com/aenthill/aenthill) starts the *Aent* <code>aenthill/cassandra</code> by calling its binary <code>aent</code> with the event name as first argument
-* It mounts the current host working directory <code>/host/project/dir</code> to the *Aent* directory <code>/aenthill</code>
+* [Aenthill](https://github.com/aenthill/aenthill) starts the *aent* <code>aenthill/cassandra</code> by calling its binary <code>aent</code> with the event name as first argument
+* It mounts the current host working directory <code>/host/project/dir</code> to the *aent* directory <code>/aenthill</code>
 * It binds the host Docker socket
 * It populates some environment variables
 
-Those environment variables allows the *Aent* to understand within which context it has been awaken.
+Those environment variables allows the *aent* to understand within which context it has been awaken.
 
 <details>
   <summary><code>PHEROMONE_FROM</code></summary>
@@ -42,17 +42,17 @@ Those environment variables allows the *Aent* to understand within which context
 
 <details>
   <summary><code>PHEROMONE_WHOAMI</code></summary>
-  <p>The event recipient (the *Aent* itself).</p>
+  <p>The event recipient (the *aent* itself).</p>
 </details>
 
 <details>
   <summary><code>PHEROMONE_HOST_PROJECT_DIR</code></summary>
-  <p>The host project directory, useful if the *Aent* sends an event to another *Aent*.</p>
+  <p>The host project directory, useful if the *aent* sends an event to another *aent*.</p>
 </details>
 
 <details>
   <summary><code>PHEROMONE_CONTAINER_PROJECT_DIR</code></summary>
-  <p>The path of the project directory in the *Aent*.</p>
+  <p>The path of the project directory in the *aent*.</p>
 </details>
 
 <details>
@@ -60,9 +60,9 @@ Those environment variables allows the *Aent* to understand within which context
   <p>The log level as defined by the user with [Aenthill](https://github.com/aenthill/aenthill).</p>
 </details>
 
-## Aent
+## aent
 
-As you understand, an *Aent* is a Docker image which has a binary called <code>aent</code>. This binary should accept two arguments:
+As you understand, an *aent* is a Docker image which has a binary called <code>aent</code>. This binary should accept two arguments:
 
 * The event name (a string)
 * The payload (a string too) which contains the data associated to the event
@@ -71,12 +71,12 @@ The last argument has to be optional (for instance, it is never filled by [Aenth
 
 **The entire process will stop if the binary <code>aent</code> returns an exit code different than 0.**
 
-You may now wondering how an *Aent* is able to communicate with another *Aent*.
+You may now wondering how an *aent* is able to communicate with another *aent*.
 
 Actually, it works the same as [Aenthill](https://github.com/aenthill/aenthill): use the Docker client binary with almost the same options.
 Just don't forget to:
 
-* Set <code>PHEROMONE_FROM</code> with your *Aent* image name
+* Set <code>PHEROMONE_FROM</code> with your *aent* image name
 * Set <code>PHEROMONE_WHOAMI</code> with the recipient image name
 
 Too much complicated? Don't worry, we provide [Hermes](https://github.com/aenthill/hermes), a tool for sending events inside a Docker container.
