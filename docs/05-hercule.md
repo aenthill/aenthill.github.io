@@ -14,11 +14,9 @@ FROM alpine:3.7
 
 [...]
 
-# Installs Hercule.
-ENV HERCULE_VERSION "latest version"
-RUN wget -qO- https://github.com/aenthill/hercule/releases/download/$HERCULE_VERSION/hercule_linux_amd64.tar.gz | tar xvz -C . &&\
-    mv ./hercule /usr/bin &&\
-    rm -f LICENSE README.md
+# Installs Hercule. You may find all available versions in the releases page: https://github.com/aenthill/hercule/releases/.
+ENV HERCULE_VERSION "version"
+RUN curl -sf https://raw.githubusercontent.com/aenthill/hercule/master/install.sh | BINDIR=/usr/bin sh -s $HERCULE_VERSION
 
 [...]
 ```
