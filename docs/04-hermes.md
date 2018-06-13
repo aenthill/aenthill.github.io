@@ -15,7 +15,7 @@ FROM alpine:3.7
 
 [...]
 
-# Required for Hermes to know which interpret to use when calling the Docker client binary.
+# Required for Hermes to know which interpreter to use when calling the Docker client binary.
 ENV SHELL "/bin/sh"
 
 # Installs Docker client.

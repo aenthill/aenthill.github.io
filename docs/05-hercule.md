@@ -31,7 +31,7 @@ RUN wget -qO- https://github.com/aenthill/hercule/releases/download/$HERCULE_VER
 $ hercule set:handled-events [event...]
 ```
 
-This command allows your *Aent* to specify which events it handles by updating the *Manifest* <code>aenthill.json</code>.
+This command allows your *Aent* to specify which events it handles by updating the *Manifest*.
 
 Next time [Hermes](https://github.com/aenthill/hermes) will dispatch an event, your *Aent* will be awaken only if it handles it.
 
