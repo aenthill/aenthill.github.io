@@ -2,7 +2,8 @@
 title: Hermes
 ---
 
-[Hermes](https://github.com/aenthill/hermes) is a tool which can be used directly inside an *aent* to send events.
+[Hermes](https://github.com/aenthill/hermes) is a tool which can be used directly inside an *aent* 
+for sending events and for manipulating the *manifest*.
 
 Its goal is to ease the communication of your *aent* with others *aents* of your ecosystem.
 
@@ -68,7 +69,8 @@ $ hermes set:handled-events [events...]
 
 This command allows your *aent* to specify which events it handles by updating the *manifest*.
 
-Next time [Hermes](https://github.com/aenthill/hermes) will dispatch an event, your *aent* will be awaken only if it handles it.
+Next time [Hermes](https://github.com/aenthill/hermes) will dispatch an in event in another *aent*, 
+your *aent* will be awaken only if it handles it.
 
 **If no event given, your *aent* will always be awaken by incoming events!**
 
