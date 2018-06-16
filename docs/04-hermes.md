@@ -69,7 +69,7 @@ $ hermes set:handled-events [events...]
 
 This command allows your *aent* to specify which events it handles by updating the *manifest*.
 
-Next time [Hermes](https://github.com/aenthill/hermes) will dispatch an in event in another *aent*, 
+Next time [Hermes](https://github.com/aenthill/hermes) will dispatch an event from another *aent*, 
 your *aent* will be awaken only if it handles it.
 
 **If no event given, your *aent* will always be awaken by incoming events!**
