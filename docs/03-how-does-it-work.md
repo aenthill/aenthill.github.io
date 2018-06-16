@@ -79,4 +79,4 @@ Just don't forget to:
 * Set <code>PHEROMONE_FROM</code> with your *aent* image name
 * Set <code>PHEROMONE_WHOAMI</code> with the recipient image name
 
-Too much complicated? Don't worry, we provide [Hermes](https://github.com/aenthill/hermes), a tool for sending events inside a Docker container.
+Too much complicated? Don't worry, we provide [Hermes](https://github.com/aenthill/hermes) to help you!

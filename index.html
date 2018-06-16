@@ -62,10 +62,6 @@
                 </div>
               
                 <div class="item">
-                  <a href="#hercule">Hercule</a>
-                </div>
-              
-                <div class="item">
                   <a href="#colonies">Colonies</a>
                 </div>
               
@@ -253,7 +249,7 @@ Just don’t forget to:</p>
 <li>Set <code>PHEROMONE_WHOAMI</code> with the recipient image name</li>
 </ul>
 
-<p>Too much complicated? Don’t worry, we provide <a href="https://github.com/aenthill/hermes">Hermes</a>, a tool for sending events inside a Docker container.</p>
+<p>Too much complicated? Don’t worry, we provide <a href="https://github.com/aenthill/hermes">Hermes</a> to help you!</p>
 
               </div>
             
@@ -315,40 +311,21 @@ RUN curl -sf https://raw.githubusercontent.com/aenthill/hermes/master/install.sh
 
 <p>It uses the environment variable <code>PHEROMONE_FROM</code> to know which <em>aent</em> to reply to.</p>
 
-              </div>
-            
-              <div class="Page" id="hercule">
-                <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="hercule" href="#hercule">
+<h3 class="Heading"><a class="Anchor" aria-hidden="true" id="hermes.commands.set_dependencies" href="#hermes.commands.set_dependencies">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-</a>Hercule</h1>
-                <p><a href="https://github.com/aenthill/hercule">Hercule</a> is a tool for manipulating a <em>manifest</em> inside an <em>aent</em>.</p>
+</a>set:dependencies</h3>
 
-<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="hercule.installation" href="#hercule.installation">
-	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-</a>Installation</h2>
-
-<p>Below an example of <code>Dockerfile</code>:</p>
-
-<pre class="chroma">FROM alpine:3.7
-
-[...]
-
-# Installs Hercule. You may find all available versions in the releases page: https://github.com/aenthill/hercule/releases/.
-ENV HERCULE_VERSION &#34;version&#34;
-RUN curl -sf https://raw.githubusercontent.com/aenthill/hercule/master/install.sh | BINDIR=/usr/bin sh -s $HERCULE_VERSION
-
-[...]
+<pre class="chroma">$ hermes set:dependencies image <span class="o">[</span>images...<span class="o">]</span>
 </pre>
 
-<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="hercule.commands" href="#hercule.commands">
-	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-</a>Commands</h2>
+<p>This command works almost the same as the add command from <a href="https://github.com/aenthill/aenthill">Aenthill</a>.
+Only difference being that if an <em>aent</em> already exists in the <em>manifest</em>, the event <code>ADD</code> will not be sent to it.</p>
 
-<h3 class="Heading"><a class="Anchor" aria-hidden="true" id="hercule.commands.set_handled_events" href="#hercule.commands.set_handled_events">
+<h3 class="Heading"><a class="Anchor" aria-hidden="true" id="hermes.commands.set_handled_events" href="#hermes.commands.set_handled_events">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>set:handled-events</h3>
 
-<pre class="chroma">$ hercule set:handled-events <span class="o">[</span>events...<span class="o">]</span>
+<pre class="chroma">$ hermes set:handled-events <span class="o">[</span>events...<span class="o">]</span>
 </pre>
 
 <p>This command allows your <em>aent</em> to specify which events it handles by updating the <em>manifest</em>.</p>

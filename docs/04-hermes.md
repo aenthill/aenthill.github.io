@@ -50,3 +50,26 @@ $ hermes reply event [payload]
 [Hermes](https://github.com/aenthill/hermes) will send the given event and payload back to the *aent* which which has awaken yours.
 
 It uses the environment variable <code>PHEROMONE_FROM</code> to know which *aent* to reply to.
+
+### set:dependencies
+
+```bash
+$ hermes set:dependencies image [images...]
+```
+
+This command works almost the same as the add command from [Aenthill](https://github.com/aenthill/aenthill). 
+Only difference being that if an *aent* already exists in the *manifest*, the event <code>ADD</code> will not be sent to it.
+
+### set:handled-events
+
+```bash
+$ hermes set:handled-events [events...]
+```
+
+This command allows your *aent* to specify which events it handles by updating the *manifest*.
+
+Next time [Hermes](https://github.com/aenthill/hermes) will dispatch an event, your *aent* will be awaken only if it handles it.
+
+**If no event given, your *aent* will always be awaken by incoming events!**
+
+This command should be called when your *aent* is awaken by the <code>ADD</code> event from [Aenthill](https://github.com/aenthill/aenthill).
