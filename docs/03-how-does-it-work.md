@@ -17,12 +17,13 @@ This command will send the event <code>ADD</code> to the *aent* <code>aenthill/c
 ```bash
 $ docker run -ti --rm
 -v "/var/run/docker.sock:/var/run/docker.sock"
--v "/host/project/dir:/aenthill"
--e "PHEROMONE_FROM="
+-v "HostProjectDir:/aenthill"
+-e "PHEROMONE_FROM_IMAGE_NAME="
+-e "PHEROMONE_FROM_CONTAINER_ID="
 -e "PHEROMONE_WHOAMI=aenthill/cassandra"
 -e "PHEROMONE_HOST_PROJECT_DIR=/host/project/dir"
 -e "PHEROMONE_CONTAINER_PROJECT_DIR=/aenthill"
--e "PHEROMONE_LOG_LEVEL=INFO"
+-e "PHEROMONE_LOG_LEVEL=ERROR"
 aenthill/cassandra aent "ADD"
 ```
 
@@ -36,18 +37,28 @@ There are several things to note:
 Those environment variables allows the *aent* to understand within which context it has been awaken.
 
 <details>
-  <summary><code>PHEROMONE_FROM</code></summary>
-  <p>The event sender (empty if sended by [Aenthill](https://github.com/aenthill/aenthill)).</p>
+  <summary><code>PHEROMONE_FROM_IMAGE_NAME</code></summary>
+  <p>The event sender image name (empty if sended by [Aenthill](https://github.com/aenthill/aenthill)).</p>
+</details>
+
+<details>
+  <summary><code>PHEROMONE_FROM_CONTAINER_ID</code></summary>
+  <p>The event sender container ID (empty if sended by [Aenthill](https://github.com/aenthill/aenthill)).</p>
 </details>
 
 <details>
   <summary><code>PHEROMONE_WHOAMI</code></summary>
-  <p>The event recipient (the *aent* itself).</p>
+  <p>The event recipient image name (the *aent* itself).</p>
+</details>
+
+<details>
+  <summary><code>HOSTNAME</code></summary>
+  <p>The event recipient container ID (populated by Docker).</p>
 </details>
 
 <details>
   <summary><code>PHEROMONE_HOST_PROJECT_DIR</code></summary>
-  <p>The host project directory, useful if the *aent* sends an event to another *aent*.</p>
+  <p>The host project directory.</p>
 </details>
 
 <details>
@@ -73,10 +84,38 @@ The last argument has to be optional (for instance, it is never filled by [Aenth
 
 You may now wondering how an *aent* is able to communicate with another *aent*.
 
-Actually, it works the same as [Aenthill](https://github.com/aenthill/aenthill): use the Docker client binary with almost the same options.
-Just don't forget to:
+There are actually two cases:
 
-* Set <code>PHEROMONE_FROM</code> with your *aent* image name
-* Set <code>PHEROMONE_WHOAMI</code> with the recipient image name
+1. dispatching an event to all *aents*
+2. replying to an *aent*
+
+### Dispatching an event
+
+The *aent* parses the *manifest* (located at <code>${PHEROMONE_CONTAINER_PROJECT_DIR}/aenthill.json</code>) to retrieve all available *aents*.
+Then it loops over them and runs the following Docker command:
+
+```bash
+$ docker run -ti --rm
+-v "/var/run/docker.sock:/var/run/docker.sock"
+-v "${PHEROMONE_HOST_PROJECT_DIR}:/aenthill"
+-e "PHEROMONE_FROM_IMAGE_NAME=${PHEROMONE_WHOAMI}"
+-e "PHEROMONE_FROM_CONTAINER_ID=${HOSTNAME}"
+-e "PHEROMONE_WHOAMI=the_recipient_aent_image_name"
+-e "PHEROMONE_HOST_PROJECT_DIR=${PHEROMONE_HOST_PROJECT_DIR}"
+-e "PHEROMONE_CONTAINER_PROJECT_DIR=/aenthill"
+-e "PHEROMONE_LOG_LEVEL=${PHEROMONE_LOG_LEVEL}"
+the_recipient_aent_image_name aent "AN_EVENT" ["A_PAYLOAD"]
+```
+
+Notice that your events may be associated with a payload.
+
+### Replying to an event
+
+If another *aent* has awaken your *aent*, you may also reply to it by running:
+
+```bash
+$ docker exec -ti
+${PHEROMONE_FROM_CONTAINER_ID} aent "AN_EVENT" ["A_PAYLOAD"]
+```
 
 Too much complicated? Don't worry, we provide [Hermes](https://github.com/aenthill/hermes) to help you!

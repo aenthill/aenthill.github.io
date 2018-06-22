@@ -179,12 +179,13 @@ directory.</p>
 
 <pre class="chroma">$ docker run -ti --rm
 -v <span class="s2">&#34;/var/run/docker.sock:/var/run/docker.sock&#34;</span>
--v <span class="s2">&#34;/host/project/dir:/aenthill&#34;</span>
--e <span class="s2">&#34;PHEROMONE_FROM=&#34;</span>
+-v <span class="s2">&#34;HostProjectDir:/aenthill&#34;</span>
+-e <span class="s2">&#34;PHEROMONE_FROM_IMAGE_NAME=&#34;</span>
+-e <span class="s2">&#34;PHEROMONE_FROM_CONTAINER_ID=&#34;</span>
 -e <span class="s2">&#34;PHEROMONE_WHOAMI=aenthill/cassandra&#34;</span>
 -e <span class="s2">&#34;PHEROMONE_HOST_PROJECT_DIR=/host/project/dir&#34;</span>
 -e <span class="s2">&#34;PHEROMONE_CONTAINER_PROJECT_DIR=/aenthill&#34;</span>
--e <span class="s2">&#34;PHEROMONE_LOG_LEVEL=INFO&#34;</span>
+-e <span class="s2">&#34;PHEROMONE_LOG_LEVEL=ERROR&#34;</span>
 aenthill/cassandra aent <span class="s2">&#34;ADD&#34;</span>
 </pre>
 
@@ -200,18 +201,28 @@ aenthill/cassandra aent <span class="s2">&#34;ADD&#34;</span>
 <p>Those environment variables allows the <em>aent</em> to understand within which context it has been awaken.</p>
 
 <p></p><details>
-  <summary><code>PHEROMONE_FROM</code></summary>
-  <p>The event sender (empty if sended by <a href="https://github.com/aenthill/aenthill">Aenthill</a>).</p>
+  <summary><code>PHEROMONE_FROM_IMAGE_NAME</code></summary>
+  <p>The event sender image name (empty if sended by <a href="https://github.com/aenthill/aenthill">Aenthill</a>).</p>
+</details><p></p>
+
+<p></p><details>
+  <summary><code>PHEROMONE_FROM_CONTAINER_ID</code></summary>
+  <p>The event sender container ID (empty if sended by <a href="https://github.com/aenthill/aenthill">Aenthill</a>).</p>
 </details><p></p>
 
 <p></p><details>
   <summary><code>PHEROMONE_WHOAMI</code></summary>
-  <p>The event recipient (the <em>aent</em> itself).</p>
+  <p>The event recipient image name (the <em>aent</em> itself).</p>
+</details><p></p>
+
+<p></p><details>
+  <summary><code>HOSTNAME</code></summary>
+  <p>The event recipient container ID (populated by Docker).</p>
 </details><p></p>
 
 <p></p><details>
   <summary><code>PHEROMONE_HOST_PROJECT_DIR</code></summary>
-  <p>The host project directory, useful if the <em>aent</em> sends an event to another <em>aent</em>.</p>
+  <p>The host project directory.</p>
 </details><p></p>
 
 <p></p><details>
@@ -241,13 +252,43 @@ aenthill/cassandra aent <span class="s2">&#34;ADD&#34;</span>
 
 <p>You may now wondering how an <em>aent</em> is able to communicate with another <em>aent</em>.</p>
 
-<p>Actually, it works the same as <a href="https://github.com/aenthill/aenthill">Aenthill</a>: use the Docker client binary with almost the same options.
-Just don’t forget to:</p>
+<p>There are actually two cases:</p>
 
-<ul>
-<li>Set <code>PHEROMONE_FROM</code> with your <em>aent</em> image name</li>
-<li>Set <code>PHEROMONE_WHOAMI</code> with the recipient image name</li>
-</ul>
+<ol>
+<li>dispatching an event to all <em>aents</em></li>
+<li>replying to an <em>aent</em></li>
+</ol>
+
+<h3 class="Heading"><a class="Anchor" aria-hidden="true" id="how_does_it_work.aent.dispatching_an_event" href="#how_does_it_work.aent.dispatching_an_event">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a>Dispatching an event</h3>
+
+<p>The <em>aent</em> parses the <em>manifest</em> (located at <code>${PHEROMONE_CONTAINER_PROJECT_DIR}/aenthill.json</code>) to retrieve all available <em>aents</em>.
+Then it loops over them and runs the following Docker command:</p>
+
+<pre class="chroma">$ docker run -ti --rm
+-v <span class="s2">&#34;/var/run/docker.sock:/var/run/docker.sock&#34;</span>
+-v <span class="s2">&#34;</span><span class="si">${</span><span class="nv">PHEROMONE_HOST_PROJECT_DIR</span><span class="si">}</span><span class="s2">:/aenthill&#34;</span>
+-e <span class="s2">&#34;PHEROMONE_FROM_IMAGE_NAME=</span><span class="si">${</span><span class="nv">PHEROMONE_WHOAMI</span><span class="si">}</span><span class="s2">&#34;</span>
+-e <span class="s2">&#34;PHEROMONE_FROM_CONTAINER_ID=</span><span class="si">${</span><span class="nv">HOSTNAME</span><span class="si">}</span><span class="s2">&#34;</span>
+-e <span class="s2">&#34;PHEROMONE_WHOAMI=the_recipient_aent_image_name&#34;</span>
+-e <span class="s2">&#34;PHEROMONE_HOST_PROJECT_DIR=</span><span class="si">${</span><span class="nv">PHEROMONE_HOST_PROJECT_DIR</span><span class="si">}</span><span class="s2">&#34;</span>
+-e <span class="s2">&#34;PHEROMONE_CONTAINER_PROJECT_DIR=/aenthill&#34;</span>
+-e <span class="s2">&#34;PHEROMONE_LOG_LEVEL=</span><span class="si">${</span><span class="nv">PHEROMONE_LOG_LEVEL</span><span class="si">}</span><span class="s2">&#34;</span>
+the_recipient_aent_image_name aent <span class="s2">&#34;AN_EVENT&#34;</span> <span class="o">[</span><span class="s2">&#34;A_PAYLOAD&#34;</span><span class="o">]</span>
+</pre>
+
+<p>Notice that your events may be associated with a payload.</p>
+
+<h3 class="Heading"><a class="Anchor" aria-hidden="true" id="how_does_it_work.aent.replying_to_an_event" href="#how_does_it_work.aent.replying_to_an_event">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a>Replying to an event</h3>
+
+<p>If another <em>aent</em> has awaken your <em>aent</em>, you may also reply to it by running:</p>
+
+<pre class="chroma">$ docker <span class="nb">exec</span> -ti
+<span class="si">${</span><span class="nv">PHEROMONE_FROM_CONTAINER_ID</span><span class="si">}</span> aent <span class="s2">&#34;AN_EVENT&#34;</span> <span class="o">[</span><span class="s2">&#34;A_PAYLOAD&#34;</span><span class="o">]</span>
+</pre>
 
 <p>Too much complicated? Don’t worry, we provide <a href="https://github.com/aenthill/hermes">Hermes</a> to help you!</p>
 
