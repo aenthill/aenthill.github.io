@@ -91,7 +91,7 @@ There are actually two cases:
 
 ### Dispatching an event
 
-The *aent* parses the *manifest* (located at <code>${PHEROMONE_CONTAINER_PROJECT_DIR}/aenthill.json</code>) to retrieve all available *aents*.
+The *aent* parses the *manifest* (located at <code>${PHEROMONE_CONTAINER_PROJECT_DIR}</code>) to retrieve all available *aents*.
 Then it loops over them and runs the following Docker command:
 
 ```bash
@@ -106,8 +106,6 @@ $ docker run -ti --rm
 -e "PHEROMONE_LOG_LEVEL=${PHEROMONE_LOG_LEVEL}"
 the_recipient_aent_image_name aent "AN_EVENT" ["A_PAYLOAD"]
 ```
-
-Notice that your events may be associated with a payload.
 
 ### Replying to an event
 

@@ -263,7 +263,7 @@ aenthill/cassandra aent <span class="s2">&#34;ADD&#34;</span>
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Dispatching an event</h3>
 
-<p>The <em>aent</em> parses the <em>manifest</em> (located at <code>${PHEROMONE_CONTAINER_PROJECT_DIR}/aenthill.json</code>) to retrieve all available <em>aents</em>.
+<p>The <em>aent</em> parses the <em>manifest</em> (located at <code>${PHEROMONE_CONTAINER_PROJECT_DIR}</code>) to retrieve all available <em>aents</em>.
 Then it loops over them and runs the following Docker command:</p>
 
 <pre class="chroma">$ docker run -ti --rm
@@ -277,8 +277,6 @@ Then it loops over them and runs the following Docker command:</p>
 -e <span class="s2">&#34;PHEROMONE_LOG_LEVEL=</span><span class="si">${</span><span class="nv">PHEROMONE_LOG_LEVEL</span><span class="si">}</span><span class="s2">&#34;</span>
 the_recipient_aent_image_name aent <span class="s2">&#34;AN_EVENT&#34;</span> <span class="o">[</span><span class="s2">&#34;A_PAYLOAD&#34;</span><span class="o">]</span>
 </pre>
-
-<p>Notice that your events may be associated with a payload.</p>
 
 <h3 class="Heading"><a class="Anchor" aria-hidden="true" id="how_does_it_work.aent.replying_to_an_event" href="#how_does_it_work.aent.replying_to_an_event">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
