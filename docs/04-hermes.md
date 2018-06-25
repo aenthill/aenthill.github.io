@@ -50,7 +50,7 @@ $ hermes reply event [payload]
 
 [Hermes](https://github.com/aenthill/hermes) will send the given event and payload back to the *aent* which which has awaken yours.
 
-It uses the environment variable <code>PHEROMONE_FROM</code> to know which *aent* to reply to.
+It uses the environment variable <code>PHEROMONE_FROM_CONTAINER_ID</code> to know which *aent* to reply to.
 
 ### set:dependencies
 
