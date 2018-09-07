@@ -62,7 +62,17 @@
 
 <p>Aenthill is distributed in a binary form and the only requirement is to have Docker installed and running on your host (always use the latest version).</p>
 
-<h2 id="linux-macos">Linux/MacOS</h2>
+<p>We currently provide pre-built binaries for the following:</p>
+
+<ul>
+<li>Linux</li>
+<li>macOS</li>
+<li>Windows</li>
+</ul>
+
+<p>You may find the latest release on the <a href="https://github.com/aenthill/aenthill/releases">releases pages</a>.</p>
+
+<h2 id="install-script-unix">Install script (Unix)</h2>
 
 <p>The quickest way to get Aenthill is to run the following command:</p>
 
@@ -71,14 +81,22 @@
 
 <p>It will installs Aenthill in the <code>/usr/local/bin</code> directory. You may change the installation path by updating the <code>BINDIR</code> value.</p>
 
-<p>You may also install a specific version with:</p>
+<h2 id="homebrew-macos">Homebrew (macOS)</h2>
 
-<pre><code class="language-bash">$ curl -sf https://raw.githubusercontent.com/aenthill/aenthill/master/install.sh | BINDIR=/usr/local/bin sh -s version
+<p>If you are on macOs and use <a href="https://brew.sh/">Homebrew</a> for package management
+you may install Aenthill with the following command:</p>
+
+<pre><code class="language-bash">$ brew install aenthill/tap/aenthill
 </code></pre>
 
-<p>All available versions are listed in the <a href="https://github.com/aenthill/aenthill/releases">releases pages</a></p>
+<h2 id="scoop-windows">Scoop (Windows)</h2>
 
-<h2 id="windows">Windows</h2>
+<p>If you are on Windows and use <a href="https://scoop.sh/">Scoop</a> for package management
+you may install Aenthill with the following commands:</p>
+
+<pre><code class="language-bash">$ scoop bucket add aenthill https://github.com/aenthill/scoop-bucket.git
+$ scoop install aenthill
+</code></pre>
 
 <h1 id="commands">Commands</h1>
 
