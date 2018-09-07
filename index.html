@@ -1,415 +1,133 @@
-<!DOCTYPE html><html><head>
-    <meta charset="utf-8"/>
-    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>Aenthill | May the swarm be with you</title>
-    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="favicons/apple-touch-icon-57x57.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="favicons/apple-touch-icon-57x57.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="favicons/apple-touch-icon-114x114.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="favicons/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="favicons/apple-touch-icon-144x144.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="favicons/apple-touch-icon-60x60.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="favicons/apple-touch-icon-120x120.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="favicons/apple-touch-icon-76x76.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="favicons/apple-touch-icon-152x152.png"/>
-    <link rel="icon" type="image/png" href="favicons/favicon-196x196.png" sizes="196x196"/>
-    <link rel="icon" type="image/png" href="favicons/favicon-96x96.png" sizes="96x96"/>
-    <link rel="icon" type="image/png" href="favicons/favicon-32x32.png" sizes="32x32"/>
-    <link rel="icon" type="image/png" href="favicons/favicon-16x16.png" sizes="16x16"/>
-    <link rel="icon" type="image/png" href="favicons/favicon-128.png" sizes="128x128"/>
-    <meta name="application-name" content=" "/>
-    <meta name="msapplication-TileColor" content="#FFFFFF"/>
-    <meta name="msapplication-TileImage" content="favicons/mstile-144x144.png"/>
-    <meta name="msapplication-square70x70logo" content="favicons/mstile-70x70.png"/>
-    <meta name="msapplication-square150x150logo" content="favicons/mstile-150x150.png"/>
-    <meta name="msapplication-wide310x150logo" content="favicons/mstile-310x150.png"/>
-    <meta name="msapplication-square310x310logo" content="favicons/mstile-310x310.png"/>
-    <link rel="stylesheet" href="theme/apex/css/index.css"/>
-  </head>
-  <body>
-    <div class="Wrapper">
-      <div class="Container">
-        <div class="Header">
-          <div class="Title center">
-              <img src="https://user-images.githubusercontent.com/8983173/40242480-15d7f8d0-5abe-11e8-9a52-8e28c95bcb60.png" alt="Logo" width="200" height="200"/>
-            <span class="text">Aenthill</span>
-            <span class="subtext">May the swarm be with you</span>
-          </div>
+<!DOCTYPE html>
+<html><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="icon" href="/img/favicon.ico">
+<title>Aenthill</title><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.0/dist/bootstrap-toc.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800">
+<link rel="stylesheet" href="/vendor/prism/prism.css">
+<link rel="stylesheet" href="/css/theme.css"><body data-spy="scroll" data-target="#toc"><header class="header">
+    <nav role="navigation" class="navbar navbar-expand-lg fixed-top">
+        <a href="/" class="navbar-brand"><img src="/img/theaentmachine.svg" width="70" height="50" alt="TheAentMachine"></a>
+        <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><span></span><span></span><span></span></button>
+        <div id="navbarSupportedContent" class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/"> Home</a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a class="nav-link " href="/use"> Use</a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a class="nav-link " href="/extend"> Extend</a>
+                    </li>
+                
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/theaentmachine/theaentmachine"><i class="fab fa-github"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fab fa-twitter"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-primary navbar-btn btn-shadow btn-gradient" href="/use/getting-started">Download</a>
+                </li>
+            </ul>
         </div>
-
-        <div class="Content-wrapper">
-          <div class="Sidebar">
-            <div class="Menu">
-              
-                <div class="item">
-                  <a href="#introduction">Introduction</a>
-                </div>
-              
-                <div class="item">
-                  <a href="#installation">Installation</a>
-                </div>
-              
-                <div class="item">
-                  <a href="#commands">Commands</a>
-                </div>
-              
-                <div class="item">
-                  <a href="#how_does_it_work">How does it work?</a>
-                </div>
-              
-                <div class="item">
-                  <a href="#hermes">Hermes</a>
-                </div>
-              
-                <div class="item">
-                  <a href="#colonies">Colonies</a>
-                </div>
-              
-                <div class="item">
-                  <a href="#links">Links</a>
-                </div>
-              
+    </nav>
+</header><main role="main">
+<section class="hero hero-home bg-gray">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6 order-md-1 text-center text-md-left pr-md-5">
+                <h1>TheAentMachine</h1>
+                <p class="hero-text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
+                <p class="hero-text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
+                <div class="CTA"><a href="/use" class="btn btn-primary btn-shadow btn-gradient link-scroll">Discover More</a><a href="/use/getting-started" class="btn btn-outline-primary">Download</a></div>
             </div>
-          </div>
-
-          <div class="Content">
-            
-              <div class="Page" id="introduction">
-                <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="introduction" href="#introduction">
-	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-</a>Introduction</h1>
-                <p><a href="https://github.com/aenthill/aenthill">Aenthill</a> is a solution for allowing Docker containers to communicate with each other in order to fulfill a task in the current host directory.</p>
-
-<p>Each of those Docker containers (called <em>aent</em>) is not aware of its peers. It is however able to receive and communicate events to them. In other words, an <em>aent</em> is not necessarily smart
-but it shares a part of the task to handle like an ant within its colony.</p>
-
-              </div>
-            
-              <div class="Page" id="installation">
-                <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="installation" href="#installation">
-	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-</a>Installation</h1>
-                <p><a href="https://github.com/aenthill/aenthill">Aenthill</a> is distributed in a binary form and
-the only requirement is to have Docker installed and running on your host (always use the latest version).</p>
-
-<p>In order to get <code>aenthill</code>, run the following command:</p>
-
-<pre class="chroma">$ curl -sf https://raw.githubusercontent.com/aenthill/aenthill/master/install.sh <span class="p">|</span> <span class="nv">BINDIR</span><span class="o">=</span>/usr/local/bin sh
-</pre>
-
-<p>This will install the latest release of <a href="https://github.com/aenthill/aenthill">Aenthill</a> in the <code>/usr/local/bin</code>
-directory.</p>
-
-<p><strong>You may of course change the destination directory by updating the <code>BINDIR</code> value.</strong></p>
-
-<p>If you want to install a specific version of <a href="https://github.com/aenthill/aenthill">Aenthill</a>, you may also run:</p>
-
-<pre class="chroma">$ curl -sf https://raw.githubusercontent.com/aenthill/aenthill/master/install.sh <span class="p">|</span> <span class="nv">BINDIR</span><span class="o">=</span>/usr/local/bin sh -s version
-</pre>
-
-<p>You may find all available versions in the <a href="https://github.com/aenthill/aenthill/releases/">releases page</a>.</p>
-
-<p>The binary <code>aenthill</code> also let you update to the latest version with the following command:</p>
-
-<pre class="chroma">$ aenthill self:update <span class="o">[</span>-t --target version<span class="o">]</span>
-</pre>
-
-<p>Last but not least, verify installation with:</p>
-
-<pre class="chroma">$ aenthill --version
-</pre>
-
-              </div>
-            
-              <div class="Page" id="commands">
-                <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="commands" href="#commands">
-	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-</a>Commands</h1>
-                <p><a href="https://github.com/aenthill/aenthill">Aenthill</a> provides the <code>aenthill</code> command-line program, which contains many useful commands.</p>
-
-<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="commands.init" href="#commands.init">
-	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-</a>init</h2>
-
-<p><a href="https://github.com/aenthill/aenthill">Aenthill</a> relies on an <code>aenthill.json</code> file (called <em>manifest</em>) which gathers all <em>aents</em> of your ecosystem.</p>
-
-<p>You may create this file in your current directory by running:</p>
-
-<pre class="chroma">$ aenthill init
-</pre>
-
-<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="commands.add" href="#commands.add">
-	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-</a>add</h2>
-
-<p>Once your <em>manifest</em> created, you may add <em>aents</em> by using:</p>
-
-<pre class="chroma">$ aenthill add image <span class="o">[</span>images...<span class="o">]</span>
-</pre>
-
-<p><a href="https://github.com/aenthill/aenthill">Aenthill</a> will add them to your <em>manifest</em> and send the event <code>ADD</code> to them.</p>
-
-<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="commands.rm" href="#commands.rm">
-	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-</a>rm</h2>
-
-<p>You may also remove <em>aents</em> by using:</p>
-
-<pre class="chroma">$ aenthill rm image <span class="o">[</span>images...<span class="o">]</span>
-</pre>
-
-<p><a href="https://github.com/aenthill/aenthill">Aenthill</a> will remove them from your <em>manifest</em> and send the event <code>REMOVE</code> to them.</p>
-
-              </div>
-            
-              <div class="Page" id="how_does_it_work">
-                <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="how_does_it_work" href="#how_does_it_work">
-	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-</a>How does it work?</h1>
-                <p>As explained before, an ecosystem of <em>aents</em> is working by sending events to each other.</p>
-
-<p>An event may be sent by <a href="https://github.com/aenthill/aenthill">Aenthill</a> directly or by another <em>aent</em>.</p>
-
-<p>Let’s start with <a href="https://github.com/aenthill/aenthill">Aenthill</a>:</p>
-
-<pre class="chroma">$ aenthill add aenthill/cassandra
-</pre>
-
-<p>This command will send the event <code>ADD</code> to the <em>aent</em> <code>aenthill/cassandra</code> by running:</p>
-
-<pre class="chroma">$ docker run -ti --rm
--v <span class="s2">&#34;/var/run/docker.sock:/var/run/docker.sock&#34;</span>
--v <span class="s2">&#34;HostProjectDir:/aenthill&#34;</span>
--e <span class="s2">&#34;PHEROMONE_FROM_IMAGE_NAME=&#34;</span>
--e <span class="s2">&#34;PHEROMONE_FROM_CONTAINER_ID=&#34;</span>
--e <span class="s2">&#34;PHEROMONE_WHOAMI=aenthill/cassandra&#34;</span>
--e <span class="s2">&#34;PHEROMONE_HOST_PROJECT_DIR=/host/project/dir&#34;</span>
--e <span class="s2">&#34;PHEROMONE_CONTAINER_PROJECT_DIR=/aenthill&#34;</span>
--e <span class="s2">&#34;PHEROMONE_LOG_LEVEL=ERROR&#34;</span>
-aenthill/cassandra aent <span class="s2">&#34;ADD&#34;</span>
-</pre>
-
-<p>There are several things to note:</p>
-
-<ul>
-<li><a href="https://github.com/aenthill/aenthill">Aenthill</a> starts the <em>aent</em> <code>aenthill/cassandra</code> by calling its binary <code>aent</code> with the event name as first argument</li>
-<li>It mounts the current host working directory <code>/host/project/dir</code> to the <em>aent</em> directory <code>/aenthill</code></li>
-<li>It binds the host Docker socket</li>
-<li>It populates some environment variables</li>
-</ul>
-
-<p>Those environment variables allows the <em>aent</em> to understand within which context it has been awaken.</p>
-
-<p></p><details>
-  <summary><code>PHEROMONE_FROM_IMAGE_NAME</code></summary>
-  <p>The event sender image name (empty if sended by <a href="https://github.com/aenthill/aenthill">Aenthill</a>).</p>
-</details><p></p>
-
-<p></p><details>
-  <summary><code>PHEROMONE_FROM_CONTAINER_ID</code></summary>
-  <p>The event sender container ID (empty if sended by <a href="https://github.com/aenthill/aenthill">Aenthill</a>).</p>
-</details><p></p>
-
-<p></p><details>
-  <summary><code>PHEROMONE_WHOAMI</code></summary>
-  <p>The event recipient image name (the <em>aent</em> itself).</p>
-</details><p></p>
-
-<p></p><details>
-  <summary><code>HOSTNAME</code></summary>
-  <p>The event recipient container ID (populated by Docker).</p>
-</details><p></p>
-
-<p></p><details>
-  <summary><code>PHEROMONE_HOST_PROJECT_DIR</code></summary>
-  <p>The host project directory.</p>
-</details><p></p>
-
-<p></p><details>
-  <summary><code>PHEROMONE_CONTAINER_PROJECT_DIR</code></summary>
-  <p>The path of the project directory in the <em>aent</em>.</p>
-</details><p></p>
-
-<p></p><details>
-  <summary><code>PHEROMONE_LOG_LEVEL</code></summary>
-  <p>The log level as defined by the user with <a href="https://github.com/aenthill/aenthill">Aenthill</a>.</p>
-</details><p></p>
-
-<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="how_does_it_work.aent" href="#how_does_it_work.aent">
-	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-</a>aent</h2>
-
-<p>As you understand, an <em>aent</em> is a Docker image which has a binary called <code>aent</code>. This binary should accept two arguments:</p>
-
-<ul>
-<li>The event name (a string)</li>
-<li>The payload (a string too) which contains the data associated to the event</li>
-</ul>
-
-<p>The last argument has to be optional (for instance, it is never filled by <a href="https://github.com/aenthill/aenthill">Aenthill</a>).</p>
-
-<p><strong>The entire process will stop if the binary <code>aent</code> returns an exit code different than 0.</strong></p>
-
-<p>You may now wondering how an <em>aent</em> is able to communicate with another <em>aent</em>.</p>
-
-<p>There are actually two cases:</p>
-
-<ol>
-<li>dispatching an event to all <em>aents</em></li>
-<li>replying to an <em>aent</em></li>
-</ol>
-
-<h3 class="Heading"><a class="Anchor" aria-hidden="true" id="how_does_it_work.aent.dispatching_an_event" href="#how_does_it_work.aent.dispatching_an_event">
-	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-</a>Dispatching an event</h3>
-
-<p>The <em>aent</em> parses the <em>manifest</em> (located at <code>${PHEROMONE_CONTAINER_PROJECT_DIR}</code>) to retrieve all available <em>aents</em>.
-Then it loops over them and runs the following Docker command:</p>
-
-<pre class="chroma">$ docker run -ti --rm
--v <span class="s2">&#34;/var/run/docker.sock:/var/run/docker.sock&#34;</span>
--v <span class="s2">&#34;</span><span class="si">${</span><span class="nv">PHEROMONE_HOST_PROJECT_DIR</span><span class="si">}</span><span class="s2">:/aenthill&#34;</span>
--e <span class="s2">&#34;PHEROMONE_FROM_IMAGE_NAME=</span><span class="si">${</span><span class="nv">PHEROMONE_WHOAMI</span><span class="si">}</span><span class="s2">&#34;</span>
--e <span class="s2">&#34;PHEROMONE_FROM_CONTAINER_ID=</span><span class="si">${</span><span class="nv">HOSTNAME</span><span class="si">}</span><span class="s2">&#34;</span>
--e <span class="s2">&#34;PHEROMONE_WHOAMI=the_recipient_aent_image_name&#34;</span>
--e <span class="s2">&#34;PHEROMONE_HOST_PROJECT_DIR=</span><span class="si">${</span><span class="nv">PHEROMONE_HOST_PROJECT_DIR</span><span class="si">}</span><span class="s2">&#34;</span>
--e <span class="s2">&#34;PHEROMONE_CONTAINER_PROJECT_DIR=/aenthill&#34;</span>
--e <span class="s2">&#34;PHEROMONE_LOG_LEVEL=</span><span class="si">${</span><span class="nv">PHEROMONE_LOG_LEVEL</span><span class="si">}</span><span class="s2">&#34;</span>
-the_recipient_aent_image_name aent <span class="s2">&#34;AN_EVENT&#34;</span> <span class="o">[</span><span class="s2">&#34;A_PAYLOAD&#34;</span><span class="o">]</span>
-</pre>
-
-<h3 class="Heading"><a class="Anchor" aria-hidden="true" id="how_does_it_work.aent.replying_to_an_event" href="#how_does_it_work.aent.replying_to_an_event">
-	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-</a>Replying to an event</h3>
-
-<p>If another <em>aent</em> has awaken your <em>aent</em>, you may also reply to it by running:</p>
-
-<pre class="chroma">$ docker <span class="nb">exec</span> -ti
-<span class="si">${</span><span class="nv">PHEROMONE_FROM_CONTAINER_ID</span><span class="si">}</span> aent <span class="s2">&#34;AN_EVENT&#34;</span> <span class="o">[</span><span class="s2">&#34;A_PAYLOAD&#34;</span><span class="o">]</span>
-</pre>
-
-<p>Too much complicated? Don’t worry, we provide <a href="https://github.com/aenthill/hermes">Hermes</a> to help you!</p>
-
-              </div>
-            
-              <div class="Page" id="hermes">
-                <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="hermes" href="#hermes">
-	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-</a>Hermes</h1>
-                <p><a href="https://github.com/aenthill/hermes">Hermes</a> is a tool which can be used directly inside an <em>aent</em>
-for sending events and for manipulating the <em>manifest</em>.</p>
-
-<p>Its goal is to ease the communication of your <em>aent</em> with others <em>aents</em> of your ecosystem.</p>
-
-<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="hermes.installation" href="#hermes.installation">
-	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-</a>Installation</h2>
-
-<p>Below an example of <code>Dockerfile</code>:</p>
-
-<pre class="chroma">FROM alpine:3.7
-
-[...]
-
-# Required for Hermes to know which interpreter to use when calling the Docker client binary.
-ENV SHELL &#34;/bin/sh&#34;
-
-# Installs Docker client.
-ENV DOCKER_VERSION &#34;18.03.1-ce&#34;
-RUN wget -qO- https://download.docker.com/linux/static/stable/x86_64/docker-$DOCKER_VERSION.tgz | tar xvz -C . &amp;&amp;\
-    mv ./docker/docker /usr/bin &amp;&amp;\
-    rm -rf ./docker
-
-# Installs Hermes. You may find all available versions in the releases page: https://github.com/aenthill/hermes/releases/.
-ENV HERMES_VERSION &#34;version&#34;
-RUN curl -sf https://raw.githubusercontent.com/aenthill/hermes/master/install.sh | BINDIR=/usr/bin sh -s $HERMES_VERSION
-
-[...]
-</pre>
-
-<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="hermes.commands" href="#hermes.commands">
-	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-</a>Commands</h2>
-
-<h3 class="Heading"><a class="Anchor" aria-hidden="true" id="hermes.commands.dispatch" href="#hermes.commands.dispatch">
-	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-</a>dispatch</h3>
-
-<pre class="chroma">$ hermes dispatch event <span class="o">[</span>payload<span class="o">]</span>
-</pre>
-
-<p><a href="https://github.com/aenthill/hermes">Hermes</a> will send the given event and payload to all <em>aents</em> in the <em>manifest</em> which handles it.</p>
-
-<h3 class="Heading"><a class="Anchor" aria-hidden="true" id="hermes.commands.reply" href="#hermes.commands.reply">
-	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-</a>reply</h3>
-
-<pre class="chroma">$ hermes reply event <span class="o">[</span>payload<span class="o">]</span>
-</pre>
-
-<p><a href="https://github.com/aenthill/hermes">Hermes</a> will send the given event and payload back to the <em>aent</em> which which has awaken yours.</p>
-
-<p>It uses the environment variable <code>PHEROMONE_FROM_CONTAINER_ID</code> to know which <em>aent</em> to reply to.</p>
-
-<h3 class="Heading"><a class="Anchor" aria-hidden="true" id="hermes.commands.set_dependencies" href="#hermes.commands.set_dependencies">
-	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-</a>set:dependencies</h3>
-
-<pre class="chroma">$ hermes set:dependencies image <span class="o">[</span>images...<span class="o">]</span>
-</pre>
-
-<p>This command works almost the same as the add command from <a href="https://github.com/aenthill/aenthill">Aenthill</a>.
-Only difference being that if an <em>aent</em> already exists in the <em>manifest</em>, the event <code>ADD</code> will not be sent to it.</p>
-
-<h3 class="Heading"><a class="Anchor" aria-hidden="true" id="hermes.commands.set_handled_events" href="#hermes.commands.set_handled_events">
-	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-</a>set:handled-events</h3>
-
-<pre class="chroma">$ hermes set:handled-events <span class="o">[</span>events...<span class="o">]</span>
-</pre>
-
-<p>This command allows your <em>aent</em> to specify which events it handles by updating the <em>manifest</em>.</p>
-
-<p>Next time <a href="https://github.com/aenthill/hermes">Hermes</a> will dispatch an event from another <em>aent</em>,
-your <em>aent</em> will be awaken only if it handles it.</p>
-
-<p><strong>If no event given, your <em>aent</em> will always be awaken by incoming events!</strong></p>
-
-<p>This command should be called when your <em>aent</em> is awaken by the <code>ADD</code> event from <a href="https://github.com/aenthill/aenthill">Aenthill</a>.</p>
-
-              </div>
-            
-              <div class="Page" id="colonies">
-                <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="colonies" href="#colonies">
-	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-</a>Colonies</h1>
-                <p>A colony is an ecosystem of <em>aents</em> which are able to work together.</p>
-
-<ul>
-<li><a href="https://google.fr">TheAentMachine</a> is a colony for adding services on the fly in <code>docker-compose.yml</code> files and Kubernetes configuration files</li>
-<li>Add your own colony by submitting a <a href="https://github.com/aenthill/aenthill.github.io/pulls">pull request</a>!</li>
-</ul>
-
-              </div>
-            
-              <div class="Page" id="links">
-                <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="links" href="#links">
-	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-</a>Links</h1>
-                <ul>
-<li><a href="https://github.com/aenthill">GitHub organization</a></li>
-<li><a href="https://www.thecodingmachine.com/">TheCodingMachine</a>, our company website</li>
-<li><a href="https://thecodingmachine.io/">Blog</a>, our company technical blog</li>
-<li><a href="https://coders.thecodingmachine.com/">Coders</a> if you are a freelance developer</li>
-</ul>
-
-              </div>
-            
-            <div class="Footer"></div>
-            <script src="theme/apex/js/index.js"></script>
-          </div>
+            <div class="col-4 mx-auto col-md-4 order-md-2"><img src="/img/theaentmachine.svg" class="img-fluid mb-3 mb-md-0" width="250"></div>
         </div>
     </div>
-  
+</section>
 
-</div></body></html>
+<section class="in-action">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-8 text-center">
+                <h2 class="h3 mb-5">TheAentMachine in action!</h2>
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"><a href="https://asciinema.org/a/199614" target="_blank"><img src="https://asciinema.org/a/199614.png" class="img-fluid rounded"></a></div>
+                    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"><a href="https://asciinema.org/a/199614" target="_blank"><img src="https://asciinema.org/a/199614.png" class="img-fluid rounded"></a></div>
+                    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab"><a href="https://asciinema.org/a/199614" target="_blank"><img src="https://asciinema.org/a/199614.png" class="img-fluid rounded"></a></div>
+                </div>
+            </div>
+            <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <a class="col nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true"><span class="number">1</span>First, associate an environment with an an <strong>orchestrator</strong></a>
+                    <a class="col ml-3 mr-3 nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false"><span class="number">2</span>Then, define a <strong>CI/CD provider</strong></a>
+                    <a class="col nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false"><span class="number">3</span>Finally, add your <strong>service</strong>!</a>
+                </div>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section id="features" class="features bg-gray">
+    <div class="container">
+        <div class="row d-flex align-items-center">
+            <div class="text col-lg-7 order-2 order-lg-1">
+                <h4>Use</h4>
+                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p><a href="/use" class="btn btn-primary btn-shadow btn-gradient">View More</a>
+            </div>
+            <div class="image col-lg-4 offset-lg-1 order-1 order-lg-2"><img src="img/use.png" alt="Use" class="img-fluid" width="300"></div>
+        </div>
+        <div class="row d-flex align-items-center">
+            <div class="image col-lg-4"><img src="img/extend.png" alt="Extend" class="img-fluid" width="300"></div>
+            <div class="text col-lg-7 offset-lg-1">
+                <h4>Extend</h4>
+                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p><a href="/extend" class="btn btn-primary btn-shadow btn-gradient">View More</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about-us" class="about-us">
+    <div class="container">
+        <h2>About us</h2>
+        <div class="row">
+            <p class="lead col-lg-10">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. or randomised words which don't look even slightly believable. </p>
+        </div><a href="#" class="btn btn-primary btn-shadow btn-gradient">Discover More</a>
+    </div>
+</section>
+
+        </main><footer class="main-footer">
+    <div class="copyrights">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <ul class="list-inline">
+                        <li class="list-inline-item"><a href="https://github.com/theaentmachine/theaentmachine">GitHub</a></li>
+                        <li class="list-inline-item"><a href="#">Twitter</a></li>
+                        <li class="list-inline-item"><a href="https://thecodingmachine.io/">Blog</a></li>
+                        <li class="list-inline-item"><a href="#">About</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-7 text-right">
+                    Made with love by <a href="https://twitter.com/gulnap">@gulnap</a> and <a href="https://twitter.com/david_negrier">@david_negrier</a><br>
+                    <small><a href="https://www.thecodingmachine.com/">TheCodingMachine</a> - Theme based on <a href="https://bootstrapious.com/p/landy">Landy</a></small>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer><script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.0/dist/bootstrap-toc.min.js"></script>
+<script src="/vendor/prism/prism.js"></script>
+<script src="/js/theme.js"></script></body>
+</html>
