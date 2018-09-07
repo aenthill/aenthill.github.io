@@ -25,8 +25,10 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://aenthill.github.io/use/getting-started/</guid>
-      <description>Installation Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.
-FOO Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec imperdiet turpis. Curabitur aliquet pulvinar ultrices. Etiam at posuere leo. Proin ultrices ex et dapibus feugiat link example aenean purus leo, faucibus at elit vel, aliquet scelerisque dui.</description>
+      <description>Installation Aenthill is distributed in a binary form and the only requirement is to have Docker installed and running on your host (always use the latest version).
+Linux/MacOS The quickest way to get Aenthill is to run the following command:
+$ curl -sf https://raw.githubusercontent.com/aenthill/aenthill/master/install.sh | BINDIR=/usr/local/bin sh  It will installs Aenthill in the /usr/local/bin directory. You may change the installation path by updating the BINDIR value.
+You may also install a specific version with:</description>
     </item>
     
   </channel>
