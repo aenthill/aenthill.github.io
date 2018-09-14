@@ -77,7 +77,7 @@
 
 <p>The quickest way to get Aenthill is to run the following command:</p>
 
-<pre><code class="language-bash">$ curl -sf https://raw.githubusercontent.com/aenthill/aenthill/master/install.sh | BINDIR=/usr/local/bin sh
+<pre><code class="language-bash">$ curl -sf https://github.com/aenthill/aenthill/blob/master/build/package/install.sh | BINDIR=/usr/local/bin sh
 </code></pre>
 
 <p>It will installs Aenthill in the <code>/usr/local/bin</code> directory. You may change the installation path by updating the <code>BINDIR</code> value.</p>
@@ -99,60 +99,7 @@ you may install Aenthill with the following commands:</p>
 $ scoop install aenthill
 </code></pre>
 
-<h1 id="commands">Commands</h1>
-
-<p>Aenthill provides a set of commands allowing you to launch aents.</p>
-
-<p>To view details for a command at any time use <code>aenthill help</code> or <code>aenthill help command</code>.</p>
-
-<pre><code>NAME:
-   aenthill - May the swarm be with you!
-
-USAGE:
-   aenthill [global options] command [command options] [arguments...]
-
-COMMANDS:
-     start, s    Starts an aent
-     add, a      Adds an aent in the manifest
-     upgrade, u  Upgrades Aenthill
-     help, h     Shows a list of commands or help for one command
-
-GLOBAL OPTIONS:
-   --verbose, -v  print verbose output to the console
-   --debug, -d    print debug output to the console
-   --help, -h     show help
-   --version      print the version
-</code></pre>
-
-<h2 id="add">Add</h2>
-
-<p>The command <code>add</code> is used to <em>install</em> an aent of type <a href="/use/orchestrators">orchestrator</a> in the manifest <code>aenthill.json</code>.</p>
-
-<p>For instance, if you want to add Docker Compose orchestrator, you may run:</p>
-
-<pre><code class="language-bash">$ aenthill add theaentmachine/aent-docker-compose
-</code></pre>
-
-<h2 id="start">Start</h2>
-
-<p>The command <code>start</code> is used to <em>launch</em> an aent of type <a href="/use/services">service</a>.</p>
-
-<p>For instance, if you want to add a PHP service, you may run:</p>
-
-<pre><code class="language-bash">$ aenthill start theaentmachine/aent-php
-</code></pre>
-
-<h2 id="upgrade">Upgrade</h2>
-
-<p>You may automatically upgrade your version of Aenthill with the latest release thanks to the <code>upgrade</code> command.</p>
-
-<pre><code class="language-bash">$ aenthill upgrade
-</code></pre>
-
-<p>You may also provide a specific version thanks to the <code>-t --target</code> flag.</p>
-
-<pre><code class="language-bash">$ aenthill upgrade -t version
-</code></pre>
+<h1 id="quick-start">Quick start</h1>
 
         </article>
 

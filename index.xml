@@ -29,7 +29,7 @@
 We currently provide pre-built binaries for the following:
  Linux macOS Windows  You may find the latest release on the releases pages.
 Install script (Unix) The quickest way to get Aenthill is to run the following command:
-$ curl -sf https://raw.githubusercontent.com/aenthill/aenthill/master/install.sh | BINDIR=/usr/local/bin sh  It will installs Aenthill in the /usr/local/bin directory.</description>
+$ curl -sf https://github.com/aenthill/aenthill/blob/master/build/package/install.sh | BINDIR=/usr/local/bin sh  It will installs Aenthill in the /usr/local/bin directory.</description>
     </item>
     
   </channel>
